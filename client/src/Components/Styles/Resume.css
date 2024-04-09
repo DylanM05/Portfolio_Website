@@ -1,0 +1,68 @@
+.container-fluid {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.resume-name {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.resume-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.resume-intro {
+  margin-bottom: 20px;
+}
+
+.resume-language {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.headings-resume {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.sub-title-resume {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.p-resume {
+  margin-bottom: 10px;
+}
+
+.link-resume {
+  text-decoration: none;
+  color: #000;
+}
+
+.tline {
+  border-left: 2px solid #000;
+  padding-left: 20px;
+}
+
+.vline {
+  border-top: 2px solid #000;
+  padding-top: 20px;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.col-md-4 ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.col-md-4 ul li {
+  margin-bottom: 5px;
+}

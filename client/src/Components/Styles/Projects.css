@@ -1,0 +1,31 @@
+.Card-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Card-images .Card-Img {
+    width: 45%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 15px;
+}
+
+.Card-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Card-images .Card-Img {
+    width: 45%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 15px;
+}
+
+.Title {
+    text-align: center;
+    font-size: 3em;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
