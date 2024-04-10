@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
   --primary-color: #9359c5;
   --secondary-color: #ffffff;
@@ -5,6 +6,15 @@
   --text-color: #ffffff;
   --font-family: 'Roboto', sans-serif;
   --Orange: #FFA500;
+
+  --Resume-background: #ffffff;
+  --Resume-name: #1a237e;
+  --Resume-headings: #1a237e;
+  --Resume-text: #333;
+  --Resume-bullet-points: #000;
+  --Resume-line: #000;
+  --Resume-button : #000;
+  --Resume-button-text : #fff;
 }
 
 body {
@@ -70,4 +80,25 @@ body {
   font-size: 1.2rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
   font-family: 'Arial', sans-serif; 
+}
+
+
+.resume {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.bullet-points {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.section-spacing {
+  margin-bottom: 40px;
+}
+
+.resume-name,
+.headings-resume,
+.sub-title-resume {
+  color: #1a237e;
 }

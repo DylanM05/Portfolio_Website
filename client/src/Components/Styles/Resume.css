@@ -1,61 +1,53 @@
-.container-fluid {
-  padding: 20px;
-}
-
-.section {
-  margin-bottom: 40px;
+.resume {
+  font-family: 'Roboto', sans-serif;
+  color: var(--Resume-text);
+  background-color: var(--Resume-background);
+  height: 100%;
+  width: 100%;
 }
 
 .resume-name {
-  font-size: 36px;
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  color: var(--Resume-name);
+  margin-right:10px;
+}
+.resume-button{
+  background-color: var(--Resume-button) !important;
+  color: var(--Resume-button-text) !important;
+  margin-top: 80px;
 }
 
-.resume-title {
-  font-size: 24px;
-  margin-bottom: 10px;
+.address {
+  font-size: 1.2rem;
+  margin-right:10px !important;
 }
 
-.resume-intro {
-  margin-bottom: 20px;
-}
-
-.resume-language {
-  font-style: italic;
-  margin-bottom: 20px;
+.profile-section p {
+  font-size: 1.5rem;
+  margin-right:10px;
 }
 
 .headings-resume {
-  font-size: 22px;
+  font-size: 2rem;
   margin-bottom: 10px;
+  color: var(--Resume-headings); 
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
 }
 
-.sub-title-resume {
-  font-size: 20px;
-  margin-bottom: 5px;
+.col-md-4.vline.tline {
+  border-left: 2px solid var(--Resume-line);
+  padding-left: 10px;
 }
 
-.p-resume {
-  margin-bottom: 10px;
+.col-md-8.tline {
+  border-top: 2px solid var(--Resume-line);
+  padding-top: 10px;
 }
 
-.link-resume {
-  text-decoration: none;
-  color: #000;
-}
-
-.tline {
-  border-left: 2px solid #000;
-  padding-left: 20px;
-}
-
-.vline {
-  border-top: 2px solid #000;
-  padding-top: 20px;
-}
-
-.row {
-  margin-bottom: 20px;
+.col-md-12{
+  padding-top: 10px
 }
 
 .col-md-4 ul {
@@ -64,5 +56,45 @@
 }
 
 .col-md-4 ul li {
-  margin-bottom: 5px;
+  margin-bottom: 10px; 
+  font-size: 1.2rem; 
+}
+.col-md-8 ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.skills-grid li {
+  font-size: 1.2rem;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.vline {
+  border-right: 1px solid var(--Resume-line); 
+}
+
+.tline {
+  border-top: 1px solid var(--Resume-line);
+
+}
+.programming-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.job-responsibility {
+  font-size: 1.2rem;
+  display: grid;
+  grid-gap: 6px;
+}
+.experience{
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Card } from "react-bootstrap";
-import { FaGithub, FaLinkedin, FaBriefcase } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFileAlt, FaProjectDiagram } from "react-icons/fa";
 import './Styles/BusinessCard.css';
 
 function BusinessCard() {
@@ -51,24 +51,27 @@ function BusinessCard() {
             <Card.Title className="card-title">Dylan McMullen</Card.Title>
             <Card.Subtitle className="card-subtitle">Software Engineer</Card.Subtitle>
             <Card.Text className="card-text">
-              Welcome to my portfolio! <br /> Click the button below to view my Portfolio, GitHub, and LinkedIn profiles.
+              Welcome to my portfolio! <br /> Click the button below to view my Resume, Projects, GitHub, and LinkedIn.
             </Card.Text>
           </div>
           <div className="card-button">
-            <button onClick={goToProjects}>
-              <FaBriefcase /> Projects
-            </button>
-            <a href="https://github.com/DylanM05" target="_blank" rel="noopener noreferrer">
-              <button variant="outline-dark">
-                <FaGithub /> GitHub
-              </button>
-            </a>
-            <a href="https://www.linkedin.com/in/dylan-mcmullen-063504272/" target="_blank" rel="noopener noreferrer">
-              <button variant="outline-dark">
-                <FaLinkedin /> LinkedIn
-              </button>
-            </a>
-          </div>
+          <button onClick={() => navigate('/resume')}>
+    <FaFileAlt /> Resume
+  </button>
+  <button onClick={goToProjects}>
+    <FaProjectDiagram /> Projects
+  </button>
+  <a href="https://github.com/DylanM05" target="_blank" rel="noopener noreferrer">
+    <button variant="outline-dark">
+      <FaGithub /> GitHub
+    </button>
+  </a>
+  <a href="https://www.linkedin.com/in/dylan-mcmullen-063504272/" target="_blank" rel="noopener noreferrer">
+    <button variant="outline-dark">
+      <FaLinkedin /> LinkedIn
+    </button>
+  </a>
+</div>
         </Card.Body>
       </Card>
       <Card className="Skills">

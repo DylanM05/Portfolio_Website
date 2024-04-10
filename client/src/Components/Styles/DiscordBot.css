@@ -11,3 +11,8 @@
 .discord-widget{
     border-radius: 10px !important;
 }
+
+.server-join{
+    background-color: var( --accent-color) !important;
+    color: var(--secondary-color) !important;
+}

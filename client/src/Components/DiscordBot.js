@@ -19,7 +19,7 @@ function DiscordWidget() {
             height= "800px"
             width= "1000px"
           />
-          <Button href="https://discord.gg/qNEsTfkA" target="_blank" rel="noopener noreferrer" className="mt-3">
+          <Button href="https://discord.gg/qNEsTfkA" target="_blank" rel="noopener noreferrer" className="mt-3 card-button server-join">
             <FontAwesomeIcon icon={faDiscord} /> Join my server to test
           </Button>
         </Card.Body>
