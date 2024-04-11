@@ -1,13 +1,17 @@
 import React from 'react';
+import './Styles/Header.css';
 
-function Header() {
+function Header({ isResumePage }) {
+  const headerClass = isResumePage ? 'header-resume' : 'header';
+  
   return (
-    <header>
-      <h1>Your Name</h1>
+    <header className={headerClass}>
+      <h1>Dylan McMullen</h1>
       <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+        <a href="/resume">Resume</a>
+        <a href="#contact">Contact me</a>
       </nav>
     </header>
   );

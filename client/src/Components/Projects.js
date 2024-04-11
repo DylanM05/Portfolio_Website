@@ -11,6 +11,7 @@ import portfolioapp2 from '../Images/portfolioapp2.png';
 import ezdeals1 from '../Images/ezdeals1.png';
 import ezdeals2 from '../Images/ezdeals2.png';
 import './Styles/Projects.css';
+import Header from './Header';
 
 function Projects() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ function Projects() {
 
   return (
       <div className='card-container'>
+        <Header />
       <h1 className='Title' style={{textAlign: 'center', fontSize: '2.5em', color: '#333'}}>My Projects</h1>
       <div className='projects-grid'>
       <Card className="project">

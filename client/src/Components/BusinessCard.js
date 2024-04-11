@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from "react-bootstrap";
 import { FaGithub, FaLinkedin, FaFileAlt, FaProjectDiagram } from "react-icons/fa";
 import './Styles/BusinessCard.css';
+import Header from "./Header";
 
 function BusinessCard() {
   const navigate = useNavigate();
@@ -45,6 +46,7 @@ function BusinessCard() {
 
   return (
     <div className="card-container">
+      <Header />
       <Card className="card">
         <Card.Body>
           <div>

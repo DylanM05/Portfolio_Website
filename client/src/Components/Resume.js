@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ThemeContext } from './Theme/ThemeContext';
 import '../App.css';
 import './Styles/Resume.css';
+import Header from './Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faCommentDots  } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,6 +34,7 @@ const Resume = () => {
   return (
     <div className={`resume container-fluid ${theme === 'dark' ? 'dark-mode' : ''}`}> 
       <div className="section">
+      <Header isResumePage={true} />
         <div className="row">
           <div className="col-md-2 align-right">
             <a href="" target="_blank" rel="noopener noreferrer">

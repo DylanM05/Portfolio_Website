@@ -5,12 +5,14 @@ import { ThemeContext } from './Theme/ThemeContext';
 import './Styles/DiscordBot.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import Header from './Header';
 
 function DiscordWidget() {
   const { theme } = useContext(ThemeContext);
 
   return (
     <div className='card-container'>
+      <Header />
       <Card className="discord-widget-card">
         <Card.Body className="d-flex flex-column align-items-center">
           <WidgetBot

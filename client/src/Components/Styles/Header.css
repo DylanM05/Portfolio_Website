@@ -1,0 +1,38 @@
+.header, .header-resume {
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header {
+    background-color: var(--primary-color);
+  }
+  
+  .header-resume {
+    background-color: var(--Resume-background);
+  }
+  
+  .header h1, .header-resume h1 {
+    margin-left: 70px;
+    font-weight: bold;
+  }
+  
+  .header nav, .header-resume nav {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+  }
+  
+  .header nav a, .header-resume nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.6rem;
+  }
+  
+  .header nav a:hover, .header-resume nav a:hover {
+    color: var(--accent-color);
+    font-style: oblique;
+  }

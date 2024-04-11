@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from './Components/Theme/ThemeProvider';
 import { ThemeSwitch } from './Components/Theme/ThemeSwitch';
 import './App.css';
+import Header from './Components/Header';
 import BusinessCard from './Components/BusinessCard';
 import Projects from './Components/Projects';
 import DiscordWidget from "./Components/DiscordBot";
