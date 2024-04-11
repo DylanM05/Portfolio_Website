@@ -98,3 +98,6 @@
   text-decoration: underline !important;
   text-underline-offset: 4px;
 }
+.list-icon {
+  margin-right: 5px;
+}

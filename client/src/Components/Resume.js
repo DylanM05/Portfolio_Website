@@ -97,8 +97,8 @@ const Resume = () => {
               {softSkills.map((skillObject, index) => (
                 skillObject.skills.map((skill, subIndex) => (
                   <li key={`${index}-${subIndex}`}>
-                    <FontAwesomeIcon icon={faCommentDots} className="list-icon" /> 
-                    {skill}
+                    <FontAwesomeIcon icon={faCommentDots} className="list-icon"  /> 
+                     {skill}
                   </li>
                 ))
               ))}

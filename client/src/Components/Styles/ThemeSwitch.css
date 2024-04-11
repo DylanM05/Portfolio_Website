@@ -19,5 +19,5 @@
   
   .theme-switch.dark {
     color: #fff;
-    background-color: #333;
+    background-color: var(--primary-color);
   }
