@@ -80,7 +80,7 @@ function BusinessCard() {
         <Card.Body>
           <Card.Title className="card-title">Skills</Card.Title>
           <Card.Text className="card-text">
-            <ul>
+            <ul className="Skills-list">
               <li>JavaScript</li>
               <li>React</li>
               <li>Node.js</li>

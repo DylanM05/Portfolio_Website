@@ -1,4 +1,5 @@
-  .card {
+
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +45,16 @@
     border-radius: 50% !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  .Skills-list{
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+  }
+  .Skills-list li::before {
+    display: inline-block;
+    align-content: left;
+    margin-right: 10px;
+  }
 
   
   @media (max-width: 600px) {
@@ -68,3 +79,7 @@
       padding: 0.8rem 1.6rem; 
     }
   }
+  .card-container{
+    overflow: hidden;
+  }
+
