@@ -5,19 +5,7 @@
 
 .Card-images .Card-Img {
     width: 45%;
-    height: auto;
-    border: 2px solid #333;
-    border-radius: 15px;
-}
-
-.Card-images {
-    display: flex;
-    justify-content: space-between;
-}
-
-.Card-images .Card-Img {
-    width: 45%;
-    height: auto;
+    height: 300px;
     border: 2px solid #333;
     border-radius: 15px;
 }
@@ -29,3 +17,34 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+    margin: 0%;
+    row-gap: 50px;
+    padding: 20px;
+  }
+  .project {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+  }
+  .card-container {
+    overflow: scroll !important;
+  }
+
+
+  .modal-content {
+    background-color: transparent !important;
+    border: transparent !important;
+  }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: red !important;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }

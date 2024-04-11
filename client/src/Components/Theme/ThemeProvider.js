@@ -2,14 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
 
   function toggleTheme() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const setSystemTheme = e => setTheme(e.matches ? 'dark' : 'light');
 
-  
+    darkModeMediaQuery.addEventListener('change', setSystemTheme);
+
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', setSystemTheme);
+    };
+  }, []);
+
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -45,7 +56,7 @@ export function ThemeProvider({ children }) {
   }, [theme]);
 
   
-  
+
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
