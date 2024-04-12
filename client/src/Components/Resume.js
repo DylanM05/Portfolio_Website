@@ -15,9 +15,11 @@ const Resume = () => {
   const [softSkills, setSoftSkills] = useState([]);
   const [volunteer, setVolunteer] = useState([]);
 
+
+
   useEffect(() => {
     const api = axios.create({
-      baseURL: 'http://localhost:3001' 
+      baseURL: 'https://dylanmcmullen.onrender.com',  
     });
   
     api.get('/api/populate')
