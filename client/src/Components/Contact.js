@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Styles/Contact.css';
 import Header from './Header';
-import { set } from 'mongoose';
-import emailjs from 'emailjs-com';
 
 
 function ContactPage() {
