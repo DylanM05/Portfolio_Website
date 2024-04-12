@@ -1,85 +1,93 @@
-
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%; 
-    max-width: 50rem;
-    height: auto;
-    padding: 2rem;
-    background-color: var(--Orange)!important;
-    border-radius: 60px !important; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .Skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    max-width: 20rem;
-    height: auto;
-    padding: 2rem;
-    background-color: var(--Orange) !important;
-    border-radius: 60px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 20%;
-    left: 80%; 
-    transform: translateY(-50%);
-  }
-  .Time {
-    position: absolute;
-    top: -80%;
-    left: 15%;
-    width: 150px;
-    height: 150px;
-    padding: 1rem;
-    background-color: var(--Orange) !important;
-    border-radius: 50% !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .Skills-list{
-    list-style: none;
-    padding-left: 0;
-    text-align: left;
-  }
-  .Skills-list li::before {
-    display: inline-block;
-    align-content: left;
-    margin-right: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%; 
+  max-width: 50rem;
+  height: auto;
+  padding: 2rem;
+  background-color: var(--Orange) !important;
+  border-radius: 60px !important; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  
-  @media (max-width: 600px) {
-    .card {
-      width: 90%; 
-    }
-  
-    .card-title {
-      font-size: 2rem !important; 
-    }
-  
-    .card-subtitle {
-      font-size: 1.2rem !important; 
-    }
-  
-    .card-text {
-      font-size: 1rem;
-    }
-  
-    .card-button button {
-      font-size: 1rem; 
-      padding: 0.8rem 1.6rem; 
-    }
-  }
-  .card-container{
+.Skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 20rem;
+  height: auto;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 20%;
+  left: 80%; 
+  transform: translateY(-50%);
+}
+
+.Time {
+  position: absolute;
+  top: -80%;
+  left: 15%;
+  width: 150px;
+  height: 150px;
+  padding: 1rem;
+  background-color: var(--Orange);
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Skills-list {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.Skills-list li::before {
+  display: inline-block;
+  align-content: left;
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
   }
+  .card {
+      width: 90%;
+      max-width: 50rem;
+      order: 2;
+  }
+  .Skills {
+      order: 3;
+  }
+  .Time {
+      order: 1;
+  }
 
+  .card-title {
+      font-size: 2rem;
+  }
+
+  .card-subtitle {
+      font-size: 1.2rem; 
+  }
+
+  .card-text {
+      font-size: 1rem;
+  }
+
+  .card-button button {
+      font-size: 1rem; 
+      padding: 0.8rem 1.6rem; 
+  }
+}

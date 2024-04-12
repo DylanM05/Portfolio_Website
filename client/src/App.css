@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 :root {
   --primary-color: #9359c5;
   --secondary-color: #ffffff;
   --accent-color: #007bff;
   --text-color: #ffffff;
   --font-family: 'Roboto', sans-serif;
-  --Orange: #FFA500;
-
+  --Orange: #ff0022;
   --Resume-background: #ffffff;
   --Resume-name: #1a237e;
   --Resume-headings: #1a237e;
   --Resume-text: #333;
   --Resume-bullet-points: #000;
   --Resume-line: #000;
-  --Resume-button : #000;
-  --Resume-button-text : #fff;
+  --Resume-button: #000;
+  --Resume-button-text: #fff;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
   font-family: var(--font-family);
 }
 
-.app{
+.app {
   text-align: center;
 }
 
@@ -34,54 +34,60 @@ body {
 }
 
 .card-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 1rem 1.5rem; 
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  align-self: center; 
 }
+
 
 .card-button button {
   background-color: var(--accent-color);
   color: var(--secondary-color);
   border: none;
   padding: 1rem 2rem;
-  border-radius: 15px !important; 
+  border-radius: 15px !important;
   font-size: 1.2rem;
   cursor: pointer;
   margin: 10px 5px;
   transition: transform 0.3s ease;
 }
 
-.card-button button:hover {
-  background-color: #0056b3;
+.card-button:hover {
+  background-color: var(--Resume-background); /* Or any other hover color you want */
+  color: var(--Resume-text);
   transform: scale(1.1);
+}
+
+.card-title,
+.card-subtitle,
+.card-text {
+  color: var(--text-color) !important;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial', sans-serif;
 }
 
 .card-title {
   font-size: 2.5rem !important;
   font-weight: bold;
-  color: var(--text-color) !important;
-  text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: 'Arial', sans-serif; 
 }
 
 .card-subtitle {
   font-size: 1.5rem !important;
-  color: var(--text-color) !important;
-  text-align: center;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
-  font-family: 'Arial', sans-serif; 
 }
 
 .card-text {
   margin-top: 1.5rem !important;
-  color: var(--text-color);
-  text-align: center;
   font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
-  font-family: 'Arial', sans-serif; 
 }
-
 
 .resume {
   font-family: 'Roboto', sans-serif;

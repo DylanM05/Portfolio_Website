@@ -44,12 +44,13 @@ function Projects() {
              <Card.Img className='Card-Img' src={Maticgas} alt="Project" onClick={() => handleShow(Maticgas)} />
               <Card.Img className='Card-Img' src={Ethgas} alt="Project" onClick={() => handleShow(Ethgas)} />
              </div>
-             <div className="card-button">
+             <div className='button-container'>
              <a href="https://github.com/DylanM05/Gas-bot" target="_blank" rel="noopener noreferrer">
-             <button variant="outline-dark"><FaGithub /> GitHub</button>
+             <button className='card-button' variant="outline-dark"><FaGithub /> GitHub</button>
              </a>
-             <button variant="outline-dark" onClick={goToDiscWidget}>Try it out!</button>
-             </div>
+
+             <button className='card-button' variant="outline-dark" onClick={goToDiscWidget}>Try it out!</button>
+              </div>
         </Card.Body>
       </Card>
 
@@ -62,9 +63,9 @@ function Projects() {
           <Card.Img className='Card-Img' src={androidapp1} alt="Project" onClick={() => handleShow(androidapp1)} />
           <Card.Img className='Card-Img' src={androidapp2} alt="Project" onClick={() => handleShow(androidapp2)} />
              </div>
-          <div className='card-button'>
+             <div className='button-container'>
           <a href="https://github.com/DylanM05/Android-Student-Teacher-Management-App" target="_blank" rel="noopener noreferrer">
-          <button variant="outline-dark"><FaGithub /> GitHub</button>
+          <button className='card-button' variant="outline-dark"><FaGithub /> GitHub</button>
           </a>
           </div>
         </Card.Body>
@@ -79,11 +80,11 @@ function Projects() {
              <Card.Img className='Card-Img' src={portfolioapp1} alt="Project" onClick={() => handleShow(portfolioapp1)} />
               <Card.Img className='Card-Img' src={portfolioapp2} alt="Project" onClick={() => handleShow(portfolioapp2)} />
              </div>
-             <div className="card-button">
+             <div className='button-container'>
              <a href="https://github.com/DylanM05/Portfolio_Website" target="_blank" rel="noopener noreferrer">
-             <button variant="outline-dark"><FaGithub /> GitHub</button>
+             <button className='card-button' variant="outline-dark"><FaGithub /> GitHub</button>
              </a>
-             </div>
+              </div>
         </Card.Body>
       </Card>
 
@@ -96,15 +97,14 @@ function Projects() {
              <Card.Img className='Card-Img' src={ezdeals1} alt="Project" onClick={() => handleShow(ezdeals1)} />
               <Card.Img className='Card-Img' src={ezdeals2} alt="Project" onClick={() => handleShow(ezdeals2)} />
              </div>
-             <div className="card-button">
+             <div className='button-container'>
              <a href="https://github.com/DylanM05/EzDealsHub" target="_blank" rel="noopener noreferrer">
-             <button variant="outline-dark"><FaGithub /> GitHub</button>
+             <button className='card-button' variant="outline-dark"><FaGithub /> GitHub</button>
              </a>
              <a href="https://ezdealshub.onrender.com/" target="_blank" rel="noopener noreferrer">
-             <button variant="outline-dark">Check it out!</button>
+             <button className='card-button' variant="outline-dark">Check it out!</button>
              </a>
-             
-             </div>
+              </div>
         </Card.Body>
       </Card>
   
@@ -112,7 +112,7 @@ function Projects() {
   <Modal show={show} onHide={handleClose} dialogClassName="modal-dialog" contentClassName="modal-content">
   <Modal.Body style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', padding: 0, position: 'relative' }}>
     <img src={modalImage} alt="Zoomed project" style={{ maxWidth: '90vw', maxHeight: '90vh' }} />
-    <Button className="close-button" onClick={handleClose}>Close</Button>
+    <Button className="close-button" id='close-button' onClick={handleClose}>Close</Button>
   </Modal.Body>
 </Modal>
   </div>

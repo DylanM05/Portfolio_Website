@@ -1,0 +1,130 @@
+:root {
+  --font-size-xlarge: 3rem;
+  --font-size-large: 2rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 0.875rem;
+  --margin-small: 1rem;
+  --margin-large: 2rem;
+  --Resume-text: #333;
+  --Resume-background: #f4f4f4;
+  --Resume-name: #000;
+  --Resume-headings: #0056b3;
+  --accent-color: #ff6347;
+  --secondary-color: #fff;
+}
+
+.contact {
+  font-family: 'Roboto', sans-serif;
+  color: var(--Resume-text);
+  background-color: var(--Resume-background);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+}
+
+.contact-name {
+  font-size: var(--font-size-xlarge);
+  margin: 0 var(--margin-small) var(--margin-small) 0;
+  color: var(--Resume-name);
+  text-align: center;
+}
+
+.card-button {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 1rem 1.5rem; 
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  align-self: center; 
+}
+
+.button-container {
+  margin-right: 23%;
+}
+
+.contact-section {
+  margin-bottom: var(--margin-large);
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.contact-heading {
+  font-size: var(--font-size-large);
+  color: var(--Resume-headings);
+  text-align: center;
+}
+
+.contact-label {
+  font-size: var(--font-size-medium);
+  color: var(--Resume-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 20vw;
+  flex-grow: 1;
+  margin-top: var(--margin-small);
+  padding: 0.5rem;
+  font-size: var(--font-size-small);
+  color: var(--Resume-text);
+  background-color: var(--Resume-background);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.contact-input {
+  padding: 0.5rem;
+}
+
+.contact-textarea {
+  height: 10vw;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.contact > div:not(.contact-name) {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .contact {
+    top: 7rem;
+  }
+  .contact-section,
+  .contact-input,
+  .contact-textarea {
+    width: 90%;
+  }
+}

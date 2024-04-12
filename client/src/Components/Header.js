@@ -11,7 +11,7 @@ function Header({ isResumePage }) {
         <a href="/">Home</a>
         <a href="/projects">Projects</a>
         <a href="/resume">Resume</a>
-        <a href="#contact">Contact me</a>
+        <a href="/contact">Contact me</a>
       </nav>
     </header>
   );

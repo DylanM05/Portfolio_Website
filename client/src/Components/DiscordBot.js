@@ -21,9 +21,13 @@ function DiscordWidget() {
             height= "800px"
             width= "1000px"
           />
+          <div className='button-container'>
+          <div className='card-button'>
           <Button href="https://discord.gg/qNEsTfkA" target="_blank" rel="noopener noreferrer" className="mt-3 card-button server-join">
             <FontAwesomeIcon icon={faDiscord} /> Join my server to test
           </Button>
+          </div>
+          </div>
         </Card.Body>
       </Card>
     </div>

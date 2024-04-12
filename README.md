@@ -2,10 +2,9 @@ To do:
 
 Add more projects
 
-Make header and footer
-Modulate back-end, break server.js into routes, controllers, etc..
-Contact page
-Restyle main page
+improve header and create footer
 
+Restyle main page & projects page 
 
-darkmode from browser?
+Make pages responsive
+

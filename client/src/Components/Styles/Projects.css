@@ -1,3 +1,11 @@
+.Title {
+    text-align: center;
+    font-size: 3em;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
 .Card-images {
     display: flex;
     justify-content: space-between;
@@ -10,41 +18,43 @@
     border-radius: 15px;
 }
 
-.Title {
-    text-align: center;
-    font-size: 3em;
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
-}
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr !important;
-    margin: 0%;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
     row-gap: 50px;
     padding: 20px;
-  }
-  .project {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
-  }
-  .card-container {
-    overflow: scroll !important;
-  }
+}
 
+.project {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-  .modal-content {
-    background-color: transparent !important;
-    border: transparent !important;
-  }
-  .close-button {
+.card-container {
+    overflow: scroll;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+  margin-left: 5rem;
+}
+
+.modal-content {
+  background-color: transparent !important;
+  border: transparent !important;
+}
+
+#close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 100px;
     height: 50px;
     color: white;
-    background-color: red !important;
+    background-color: red;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
-  }
+}

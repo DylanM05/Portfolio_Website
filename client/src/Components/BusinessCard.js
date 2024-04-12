@@ -56,24 +56,24 @@ function BusinessCard() {
               Welcome to my portfolio! <br /> Click the button below to view my Resume, Projects, GitHub, and LinkedIn.
             </Card.Text>
           </div>
-          <div className="card-button">
-          <button onClick={() => navigate('/resume')}>
+          <button className="card-button" onClick={() => navigate('/resume')}>
     <FaFileAlt /> Resume
   </button>
-  <button onClick={goToProjects}>
+  <button className="card-button" onClick={goToProjects}>
     <FaProjectDiagram /> Projects
   </button>
   <a href="https://github.com/DylanM05" target="_blank" rel="noopener noreferrer">
-    <button variant="outline-dark">
+    <button className="card-button" variant="outline-dark">
       <FaGithub /> GitHub
     </button>
   </a>
+
   <a href="https://www.linkedin.com/in/dylan-mcmullen-063504272/" target="_blank" rel="noopener noreferrer">
-    <button variant="outline-dark">
+    <button className="card-button" variant="outline-dark">
       <FaLinkedin /> LinkedIn
     </button>
   </a>
-</div>
+
         </Card.Body>
       </Card>
       <Card className="Skills">

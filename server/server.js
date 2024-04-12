@@ -3,9 +3,17 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
+const rateLimit = require("express-rate-limit");
 const populateRoutes = require('./Routes/populateRoute');
 const PORT = process.env.PORT || 3001;
 const allowedOrigins = ['http://localhost:3000', 'https://dylanmcmullen.vercel.app'];
+const contactRoutes = require('./Routes/contactRoute');
+
+const apiLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 5 // limit each IP to 5 requests per windowMs
+});
+
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -20,7 +28,9 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/', populateRoutes);
-console.log(__dirname);
+app.use('/contact', apiLimiter, contactRoutes);
+
+
 const uri = process.env.MONGODB_URI;
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
