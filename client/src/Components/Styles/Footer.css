@@ -1,0 +1,7 @@
+.app-footer {
+    background-color: var(--Resume-background);
+    color: var(--Resume-text);
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+}

@@ -12,6 +12,7 @@ import ezdeals1 from '../Images/ezdeals1.png';
 import ezdeals2 from '../Images/ezdeals2.png';
 import './Styles/Projects.css';
 import Header from './Header';
+import Footer from './Footer';
 
 function Projects() {
   const navigate = useNavigate();
@@ -119,6 +120,7 @@ function Projects() {
   </Modal.Body>
 </Modal>
   </div>
+  <Footer />
   </div>
   );
 }

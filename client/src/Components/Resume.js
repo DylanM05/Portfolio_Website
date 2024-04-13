@@ -7,6 +7,7 @@ import '../App.css';
 import './Styles/Resume.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faCommentDots  } from '@fortawesome/free-solid-svg-icons';
+import Footer from './Footer';
 
 const Resume = () => {
   const { theme } = useContext(ThemeContext);
@@ -139,6 +140,7 @@ if (isLoading) {
     </div>
   ))}
 </div>
+<Footer />
       </div>
     </div>
   );

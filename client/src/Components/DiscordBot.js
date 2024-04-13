@@ -6,6 +6,7 @@ import './Styles/DiscordBot.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import Header from './Header';
+import Footer from './Footer';
 
 function DiscordWidget() {
   const { theme } = useContext(ThemeContext);
@@ -32,6 +33,7 @@ function DiscordWidget() {
         </Card.Body>
       </Card>
     </div>
+  <Footer />
     </div>
   );
 }

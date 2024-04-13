@@ -4,6 +4,7 @@ import { Card } from "react-bootstrap";
 import { FaGithub, FaLinkedin, FaFileAlt, FaProjectDiagram } from "react-icons/fa";
 import './Styles/BusinessCard.css';
 import Header from "./Header";
+import Footer from "./Footer";
 
 function BusinessCard() {
   const navigate = useNavigate();
@@ -115,6 +116,7 @@ function BusinessCard() {
       </Card>
     </div>
     </div>
+    <Footer />
         </div>
   );
 }

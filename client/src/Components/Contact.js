@@ -6,11 +6,8 @@ import Header from './Header';
 
 function ContactPage() {
   const [textMessage, setTextMessage] = useState('');
-  const [emailMessage, setEmailMessage] = useState('');
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [subject, setSubject] = useState('');
   const [result, setResult] = useState("");
   
 
@@ -23,12 +20,6 @@ function ContactPage() {
     setContact('');
     setTextMessage('');
   };
-  const clearEmailFields = () => {
-    setName('');
-    setContactEmail('');
-    setSubject('');
-    setEmailMessage('');
-    };
 
 
   const handleTextSubmit = async (event) => {

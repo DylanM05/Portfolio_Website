@@ -1,8 +1,7 @@
 import React from 'react';
 import './Styles/Header.css';
 
-function Header({ isResumePage }) {
-  const headerClass = isResumePage ? 'header-resume' : 'header';
+function Header() {
   
   return (
     <header className='header-resume' >
