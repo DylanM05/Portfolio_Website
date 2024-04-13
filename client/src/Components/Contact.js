@@ -103,8 +103,6 @@ function ContactPage() {
   </div>
 </form>
       </div>
-      
-      
       <div className="contact-section">     
         <h2 className="contact-heading">Send me an email!</h2>
         <div>

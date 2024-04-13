@@ -118,6 +118,7 @@ form {
   align-items: center;
 }
 
+
 @media (max-width: 600px) {
   .contact {
     top: 7rem;
@@ -132,6 +133,10 @@ form {
   }
   .contact-heading {
     font-size: var(--font-size-medium);
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
