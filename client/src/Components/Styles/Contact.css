@@ -118,7 +118,24 @@ form {
   align-items: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+  .contact {
+    top: 7rem;
+  }
+  .contact-section,
+  .contact-input,
+  .contact-textarea {
+    width: 90%;
+  }
+  .contact-name {
+    font-size: var(--font-size-large);
+  }
+  .contact-heading {
+    font-size: var(--font-size-medium);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
   .contact {
     top: 7rem;
   }
@@ -128,3 +145,13 @@ form {
     width: 90%;
   }
 }
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .contact-section,
+  .contact-input,
+  .contact-textarea {
+    width: 70%;
+  }
+}
+
+

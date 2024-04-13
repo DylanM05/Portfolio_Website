@@ -5,7 +5,7 @@ function Header({ isResumePage }) {
   const headerClass = isResumePage ? 'header-resume' : 'header';
   
   return (
-    <header className={headerClass}>
+    <header className='header-resume' >
       <h1>Dylan McMullen</h1>
       <nav>
         <a href="/">Home</a>

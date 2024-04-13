@@ -11,8 +11,9 @@ function DiscordWidget() {
   const { theme } = useContext(ThemeContext);
 
   return (
+    <div>
+            <Header />
     <div className='card-container'>
-      <Header />
       <Card className="discord-widget-card">
         <Card.Body className="d-flex flex-column align-items-center">
           <WidgetBot
@@ -30,6 +31,7 @@ function DiscordWidget() {
           </div>
         </Card.Body>
       </Card>
+    </div>
     </div>
   );
 }

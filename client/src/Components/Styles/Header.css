@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: var(--shadow-color) 2px solid; 
+    z-index: 2;
   }
   
   .header {
@@ -15,11 +17,14 @@
   }
   
   .header h1, .header-resume h1 {
+    justify-content: flex-start;
     margin-left: 70px;
     font-weight: bold;
   }
   
+  
   .header nav, .header-resume nav {
+    justify-content: flex-end;
     display: flex;
     gap: 20px;
     font-weight: bold;
@@ -36,6 +41,8 @@
     color: var(--accent-color);
     font-style: oblique;
   }
+
+
   @media only screen and (max-width: 900px) {
     .header, .header-resume {
       flex-direction: column;

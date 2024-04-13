@@ -5,6 +5,7 @@
   --secondary-color: #ffffff;
   --accent-color: #007bff;
   --text-color: #ffffff;
+  --shadow-color: #333;
   --font-family: 'Roboto', sans-serif;
   --Orange: #ff0022;
   --Resume-background: #ffffff;
@@ -29,8 +30,7 @@ body {
 .card-container {
   position: relative;
   height: 100vh;
-  background-color: var(--primary-color);
-  overflow: hidden;
+  background-color: var(--Resume-background);
 }
 
 .card-button {

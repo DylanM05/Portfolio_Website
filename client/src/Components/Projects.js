@@ -30,10 +30,12 @@ function Projects() {
 
 
   return (
+    <div>
+      <Header />
+          <h1 className='Title'>My Projects</h1>
       <div className='card-container'>
-        <Header />
-      <h1 className='Title' style={{textAlign: 'center', fontSize: '2.5em', color: '#333'}}>My Projects</h1>
-      <div className='projects-grid'>
+      <div className='parent-div'>
+        <div className='projects-grid'>
       <Card className="project">
         <Card.Body>
           <Card.Title className="card-title">ETH / MATIC gas Discord Bot</Card.Title>
@@ -109,6 +111,7 @@ function Projects() {
       </Card>
   
   </div>
+  </div>
   <Modal show={show} onHide={handleClose} dialogClassName="modal-dialog" contentClassName="modal-content">
   <Modal.Body style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', padding: 0, position: 'relative' }}>
     <img src={modalImage} alt="Zoomed project" style={{ maxWidth: '90vw', maxHeight: '90vh' }} />
@@ -116,7 +119,7 @@ function Projects() {
   </Modal.Body>
 </Modal>
   </div>
-    
+  </div>
   );
 }
 

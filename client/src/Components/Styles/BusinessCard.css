@@ -1,93 +1,166 @@
-.card {
+:root {
+  --font-size-large: 2rem;
+  --font-size-medium: 1.5rem;
+  --font-size-small: 1rem;
+  --primary-color: #f4f4f4;  
+  --text-color: #333;        
+  --accent-color: #ff6347;   
+  --secondary-color: #fff;     
+}
+
+.page-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh; /* Full viewport height */
+  position: relative;
+  background-color: var(--Resume-background) !important;
+}
+
+.card-container {
+  display: flex;
   justify-content: center;
-  width: 80%; 
-  max-width: 50rem;
-  height: auto;
-  padding: 2rem;
-  background-color: var(--Orange) !important;
-  border-radius: 60px !important; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.Skills {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 80%;
-  max-width: 20rem;
-  height: auto;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 20%;
-  left: 80%; 
-  transform: translateY(-50%);
+  flex: 1; /* Takes up remaining space, pushing Skills to bottom */
 }
 
-.Time {
+.skills-container {
   position: absolute;
-  top: -80%;
-  left: 15%;
-  width: 150px;
-  height: 150px;
-  padding: 1rem;
-  background-color: var(--Orange);
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  right: 0;
+  top: 50%; /* Centered vertically */
+  transform: translateY(-50%); /* Offset by half its height */
+  width: 20%; /* Adjust width as needed */
+  margin-top: 3rem;
 }
+
+.time-container {
+  position: absolute;
+  left: 0;
+  top: 5;
+  width: 20%;
+}
+
+
+.card, .Skills, .Time {
+  margin: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--Resume-background);
+  border-radius: 15px;
+}
+
+.card {
+  width: 50%;
+}
+
+
+.card-title, .card-subtitle {
+  color: var(--Resume-text);
+  text-align: center;
+}
+
+.card-title {
+  font-size: var(--font-size-large);
+}
+
+.card-subtitle {
+  font-size: var(--font-size-medium);
+}
+
+.card-text {
+  font-size: var(--font-size-small);
+  color: var(--Resume-text);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.card-button {
+  background-color: var(---colors);
+  color: var(--secondary-color);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  margin: 1rem;
+  transition: transform 0.3s ease;
+}
+
 
 .Skills-list {
   list-style: none;
-  padding-left: 0;
-  text-align: left;
+  padding: 0;
+  font-size: var(--font-size-small);
 }
 
-.Skills-list li::before {
-  display: inline-block;
-  align-content: left;
-  margin-right: 10px;
+.Skills-list li {
+  padding: 0.5rem 0;
+}
+.card, .Skills, .Time {
+  background-color: var(--resume-background) !important;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.card-button-container {
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 600px) {
-  .card-container {
+
+@media (max-width: 1700px) or (max-height: 1000px) {
+  .card-container, .skills-container, .time-container {
+    position: static;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    order: 0;
+  }
+
+  .card, .Skills, .Time {
+    width: 90%; 
+    margin: 10px auto;
+  }
+
+  .card-button {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .skills-container {
+    order: 1; 
+  }
+
+  .time-container {
+    order: -1; 
+    position: relative !important;
+    justify-content: center;
+    height: auto !important;
+    max-height: fit-content;
+    width: 0%; 
+    align-self: center;
     overflow: hidden;
   }
-  .card {
-      width: 90%;
-      max-width: 50rem;
-      order: 2;
-  }
-  .Skills {
-      order: 3;
-  }
-  .Time {
-      order: 1;
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--Resume-background) !important;
   }
 
-  .card-title {
-      font-size: 2rem;
+  html, body {
+    height: 100%;
+    margin: 0;
+    background-color: var(--Resume-background);
   }
-
-  .card-subtitle {
-      font-size: 1.2rem; 
+  .Skills-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
-
   .card-text {
-      font-size: 1rem;
-  }
-
-  .card-button button {
-      font-size: 1rem; 
-      padding: 0.8rem 1.6rem; 
+    font-size: clamp(12px, 2vw, 20px);
   }
 }

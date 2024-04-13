@@ -1,12 +1,12 @@
 :root {
-  --font-size-small: 1.2rem;
-  --font-size-medium: 1.5rem;
-  --font-size-large: 2rem;
-  --font-size-xlarge: 2.5rem;
-  --margin-small: 10px;
-  --margin-large: 80px;
-  --border-width: 2px;
-  --border-width-small: 1px;
+  --font-size-small: 1.2rem !important;
+  --font-size-medium: 1.8rem !important;
+  --font-size-large: 2rem !important;
+  --font-size-xlarge: 2.5rem !important;
+  --margin-small: 10px !important;
+  --margin-large: 80px !important;
+  --border-width: 2px !important;
+  --border-width-small: 1px !important;
 }
 
 .resume {

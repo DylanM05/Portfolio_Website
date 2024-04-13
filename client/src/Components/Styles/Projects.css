@@ -1,9 +1,10 @@
 .Title {
     text-align: center;
-    font-size: 3em;
-    color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+    font-size: 2.5em;
+    color: var(--Resume-headings);
+    background-color: var(--Resume-background);
+    margin-bottom: 0; 
+    font-weight: bolder;
 }
 
 .Card-images {
@@ -16,29 +17,34 @@
     height: 300px;
     border: 2px solid #333;
     border-radius: 15px;
+    border: var(--shadow-color) 2px solid;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0;
     row-gap: 50px;
-    padding: 20px;
+    margin: 2rem auto 0 auto;
+    width: 90%;
 }
 
+
 .project {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px var(--shadow-color);
+    width: 80%;
 }
 
 .card-container {
-    overflow: scroll;
+    padding: 20px;
+    align-items: center;
+    height: 100%;
 }
 .button-container {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 20px;
-  margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    margin-left: 22%;
 }
 
 .modal-content {
@@ -57,4 +63,59 @@
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+@media (max-width: 1850px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+
+.project {
+    box-shadow: 0 0 10px var(--shadow-color);
+    width: 80%;
+}
+
+.card-container {
+    padding: 20px;
+    align-items: center;
+    height: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    margin-left: 22%;
+}
+
+.modal-content {
+    margin-top: 50%;
+    width: 0;
+    height: 0;
+    overflow:visible;
+}
+
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    overflow: hidden;
+}
 }

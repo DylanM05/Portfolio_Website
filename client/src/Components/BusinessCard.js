@@ -45,8 +45,10 @@ function BusinessCard() {
   const formattedDate = `${getMonthName(monthIndex)} ${day}${getOrdinalSuffix(day)} ${year}`;
 
   return (
-    <div className="card-container">
-      <Header />
+    <div>
+            <Header />
+            <div className="page-container">
+            <div className="card-container">
       <Card className="card">
         <Card.Body>
           <div>
@@ -56,6 +58,7 @@ function BusinessCard() {
               Welcome to my portfolio! <br /> Click the button below to view my Resume, Projects, GitHub, and LinkedIn.
             </Card.Text>
           </div>
+          <div class="card-button-container">
           <button className="card-button" onClick={() => navigate('/resume')}>
     <FaFileAlt /> Resume
   </button>
@@ -73,9 +76,11 @@ function BusinessCard() {
       <FaLinkedin /> LinkedIn
     </button>
   </a>
-
+  </div>
         </Card.Body>
       </Card>
+      </div>
+      <div className="skills-container">
       <Card className="Skills">
         <Card.Body>
           <Card.Title className="card-title">Skills</Card.Title>
@@ -101,12 +106,16 @@ function BusinessCard() {
         </Card.Body>
 
       </Card>
+      </div>
+      <div className="time-container">
       <Card className="Time">
       <Card.Subtitle className="card-text">
    {formattedDate} 
             </Card.Subtitle>
       </Card>
     </div>
+    </div>
+        </div>
   );
 }
 
