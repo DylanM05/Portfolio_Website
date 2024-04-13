@@ -141,6 +141,7 @@
     width: 0%; 
     align-self: center;
     overflow: hidden;
+    box-shadow: none;
   }
   .page-container {
     display: flex;
@@ -162,5 +163,96 @@
   }
   .card-text {
     font-size: clamp(12px, 2vw, 20px);
+  }
+}
+@media (max-width: 600px) {
+  .card-container, .skills-container, .time-container {
+    flex-direction: column;
+  }
+
+  .card, .Skills, .Time {
+    width: 100%;
+  }
+
+  .skills-container, .time-container {
+    width: 100%;
+  }
+
+  .card-text {
+    font-size: var(--font-size-small);
+  }
+  .card-button {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-small);
+  }
+  .card-button {
+    padding: 0.6rem 0.8rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .card-container, .skills-container, .time-container {
+    flex-direction: row;
+  }
+
+  .card, .Skills, .Time {
+    width: 100%;
+  }
+
+  .skills-container, .time-container {
+    width: 50%;
+  }
+
+  .card-text {
+    font-size: var(--font-size-medium);
+  }
+  .time-container {
+    order: -1; 
+    position: relative !important;
+    justify-content: center;
+    height: auto !important;
+    max-height: fit-content;
+    width: 0%; 
+    align-self: center;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .card-button {
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1700px) {
+  .card-container, .skills-container, .time-container {
+    flex-direction: row;
+  }
+
+  .card, .Skills, .Time {
+    width: 90%;
+  }
+
+  .skills-container, .time-container {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+
+  .time-container {
+    order: -1; 
+    position: relative !important;
+    justify-content: center;
+    height: auto !important;
+    max-height: fit-content;
+    width: 0%; 
+    align-self: center;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  .card-button {
+    padding: 1rem 1.25rem;
+    font-size: 1rem !important;
   }
 }
