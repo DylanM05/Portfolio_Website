@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, Modal, Button, Carousel } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { DiAndroid, } from "react-icons/di";
 import { SiPython, SiPreact, SiBootstrap, SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
@@ -14,7 +12,6 @@ import './Styles/Projects.css';
 import Header from './Header';
 import Footer from './Footer';
 
-// Import images
 import Ethgas from '../Images/ethgas.png';
 import Maticgas from '../Images/maticgas.png';
 import androidapp1 from '../Images/androidapp1.png';
