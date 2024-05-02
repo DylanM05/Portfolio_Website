@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Styles/Contact.css';
 import Header from './Header';
@@ -9,7 +9,22 @@ function ContactPage() {
   const [name, setName] = useState('');
   const [contact, setContact] = useState('');
   const [result, setResult] = useState("");
+  const [cooldownStart, setCooldownStart] = useState(null);
+
+
+  let remainingMinutes = 0;
+  let now = new Date();
+  let cooldownEnd = null;
   
+  if (cooldownStart) {
+    cooldownEnd = new Date(cooldownStart.getTime() + 60 * 60 * 1000);
+    remainingMinutes = Math.round((cooldownEnd - now) / 1000 / 60);
+  }
+
+useEffect(() => {
+  const cooldownStart = new Date(localStorage.getItem('cooldownStart'));
+  setCooldownStart(cooldownStart);
+}, []);
 
   const api = axios.create({
     baseURL: 'https://dylanmcmullen.onrender.com',  
@@ -24,11 +39,14 @@ function ContactPage() {
 
   const handleTextSubmit = async (event) => {
     event.preventDefault();
+    const now = new Date();
+    localStorage.setItem('cooldownStart', now);
+    setCooldownStart(now);
     try {
       const message = `Name: ${name}, Contact: ${contact}, Message: ${textMessage}`;
       const response = await api.post('/contact/sendtext', { message });
       console.log(response.data);
-        clearTextFields();
+      clearTextFields();
     } catch (error) {
       if (error.response && error.response.status === 429) {
         alert("Too many requests, please wait an hour before trying again");
@@ -89,9 +107,10 @@ function ContactPage() {
     <textarea className="contact-textarea" value={textMessage} onChange={(e) => setTextMessage(e.target.value)} />
   </div>
   
-  <div class="button-container">
-  <button className="card-button" type="submit">Send Text</button>
-  </div>
+<div className="button-container">
+  <button className="card-button" type="submit" disabled={cooldownStart && now < cooldownEnd}>Send Text</button>
+</div>
+{cooldownStart && now < cooldownEnd && <p>You must wait {remainingMinutes} minutes to send another text.</p>}
 </form>
       </div>
       <div className="contact-section">     

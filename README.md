@@ -2,5 +2,11 @@ To do:
 
 Add more projects
 
+get better images / handle images better on projects page
 
-rate limiting for SMS needs to be fixed
+
+Access via:
+
+https://tinyurl.com/dylanmcmullen
+
+https://dylanmcmullen.vercel.app/

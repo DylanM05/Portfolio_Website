@@ -3,16 +3,23 @@ import { ThemeContext } from './ThemeContext';
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    localStorage.getItem('theme') || 
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
   );
 
   function toggleTheme() {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
   }
 
   useEffect(() => {
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const setSystemTheme = e => setTheme(e.matches ? 'dark' : 'light');
+    const setSystemTheme = e => {
+      const newTheme = e.matches ? 'dark' : 'light';
+      setTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    };
 
     darkModeMediaQuery.addEventListener('change', setSystemTheme);
 
@@ -20,7 +27,6 @@ export function ThemeProvider({ children }) {
       darkModeMediaQuery.removeEventListener('change', setSystemTheme);
     };
   }, []);
-
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -56,8 +62,6 @@ export function ThemeProvider({ children }) {
     
     }
   }, [theme]);
-
-  
 
 
   return (

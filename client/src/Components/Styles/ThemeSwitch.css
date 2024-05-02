@@ -1,5 +1,5 @@
 .theme-switch {
-    position: fixed;
+    position: absolute;
     top: 1rem;
     left: 1rem;
     border: none;
@@ -20,4 +20,12 @@
   .theme-switch.dark {
     color: #fff;
     background-color: var(--primary-color);
+  }
+
+  @media (max-width: 600px) {
+    .theme-switch {
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 1.5rem;
+    }
   }
