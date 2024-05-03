@@ -51,7 +51,7 @@ if (isLoading) {
       <Header isResumePage={true} />
         <div className="row">
           <div className="col-md-2 align-right">
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1xkhuTyuvHGfYtsE5oCAdCVycznCMsfbn/view?usp=sharing" target="_blank" rel="noopener noreferrer">
               <div className="btn btn-dark resume-button">View PDF</div>
             </a>
           </div>
