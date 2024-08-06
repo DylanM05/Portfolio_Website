@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, Modal, Button, Carousel } from 'react-bootstrap';
 import { DiAndroid, } from "react-icons/di";
-import { SiPython, SiPreact, SiBootstrap, SiMongodb } from "react-icons/si";
+import { SiPython, SiPreact, SiBootstrap, SiMongodb, SiPortainer } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { BiSolidFileCss } from "react-icons/bi";
 import { TbFileTypeXml, TbBrandKotlin } from "react-icons/tb";
@@ -20,6 +20,8 @@ import portfolioapp1 from '../Images/portfolioapp1.png';
 import portfolioapp2 from '../Images/portfolioapp2.png';
 import ezdeals1 from '../Images/ezdeals1.png';
 import ezdeals2 from '../Images/ezdeals2.png';
+import portainer from '../Images/portainer.png';
+import webscrape from '../Images/webscrape.png';
 
 function Projects() {
   const navigate = useNavigate();
@@ -76,6 +78,20 @@ function Projects() {
       buttonText: 'GitHub',
       websiteLink: 'https://ezdealshub.onrender.com/',
       websiteButtonText: 'Check it out!'
+    },
+    {
+      title: 'Indeed Webscraper',
+      subtitle: <div>Language: <SiPython /> Python </div>,
+      description: 'This is a webscraper that I made using Python. It scrapes the Indeed website for job postings and stores them in a CSV file.',
+      images: [webscrape],
+      githubLink: 'https://github.com/DylanM05/IndeedWebScraper',
+      buttonText: 'GitHub'
+    },
+    {
+      title: 'Home Media & Cloud server',
+      subtitle: <div>Running: Ubuntu Server and seperating everything into Docker containers</div>,
+      description: 'This is a server that I made using Ubuntu Server. It runs a Plex server, Nextcloud server, and a few other services. I have everything separated into Docker containers for easy management.',
+      images: [portainer],
     }
   ];
 
