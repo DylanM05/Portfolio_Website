@@ -1,181 +1,41 @@
-.Title {
-    text-align: center;
-    font-size: 2.5em;
-    color: var(--Resume-headings);
-    background-color: var(--Resume-background);
-    padding: 1rem;
-    margin-bottom: 0;
-    font-weight: bolder;
+.carousel-indicators li {
+    background-color: var(--indicator-color) !important; 
+    opacity: 0.5;
+    border: 1px solid var(--indicator-color) !important;
+}
+.carousel-dark .carousel-indicators [data-bs-target], .carousel-indicators [data-bs-target] {
+    background-color: var(--Resume-text) !important;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    border-radius: 50% !important;
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+.carousel-indicators .active {
+    background-color: var(--indicator-color) !important; 
+    opacity: 1; 
 }
 
-.Card-images {
-    display: flex;
-    justify-content: center;
+.carousel-control-prev,
+.carousel-control-next {
+    color: var(--indicator-color) !important;
+    background-color: var(--Resume-button) !important;
+    opacity: 0 !important; 
+    transition: opacity 0.5s ease !important;
+    width: 5% !important;
+    border-radius: 10px;
 }
 
-.Card-images .Card-Img, .carousel-container img {
-    width: 200px ;
-    height: 300px;
-    object-fit: fill;
-    border: var(--shadow-color) 2px solid;
-    border-radius: 15px;
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next,
+.carousel:focus .carousel-control-prev,
+.carousel:focus .carousel-control-next {
+  opacity: 0.6 !important;
 }
 
-.carousel-container {
-    position: relative;
-    width: 80%;
-    max-height: 300px; 
-    overflow:scroll;
-}
-
-.carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.carousel-indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ccc;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.carousel-indicator.active {
-    background-color: #333;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 50px;
-    column-gap: 50px;
-    margin: 2rem auto 0 auto;
-    width: 90%;
-}
-
-.project, .card-container {
-    box-shadow: 0 0 10px var(--shadow-color);
-    width: 100%;
-    padding: 20px;
-    align-items: center;
-    height: 100%;
-}
-
-
-.button-container {
-    display: flex;
-    flex-direction: row !important;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 20px;
-    margin-left: 40%;
-    max-width: 20%;
-}
-
-.modal-content {
-  background-color: transparent !important;
-  border: transparent !important;
-}
-
-.img-disc{
-    font-size: 0.9rem;
-    color: var(--Resume-text);
-    text-align: center;
-    margin-top: 0.4rem !important;
-}
-
-#close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 100px;
-    height: 50px;
-    color: white;
-    background-color: red;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-@media (max-width: 1850px) {
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .modal-content {
-        margin-top: 50%;
-        width: 0;
-        height: 0;
-        overflow:visible;
-    }
-
-    #close-button {
-        width: 0;
-        height: 0;
-        background-color: transparent;
-        overflow: hidden;
-    }
-}
-
-@media (max-width: 450px) {
-    .Card-images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Card-images .Card-Img, .carousel-container img {
-        width: 100%;
-        height: auto;
-    }
-    .carousel-container {
-        position: relative;
-        width: 80%;
-        max-height: 200px; 
-        overflow:scroll;
-    }
-
-    .card-title{
-        font-size: 1.2rem !important;
-        margin-bottom: 0.6rem !important;
-    }
-
-    .card-subtitle, .card-text{
-        font-size: 0.8rem !important;
-    }
-
-    .button-container{
-        display: flex;
-        flex-direction: column !important;
-        margin-left: 40%;
-    }
-
-    .card-button{
-        font-weight:500 !important;
-        font-size: 0.9rem !important;
-        width: 7rem !important;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project {
-        width: 90%;
-    }
-
-    .card-container {
-        padding: 10px;
-    }
+.image-carousel img {
+  height: 500px; 
+  object-fit: cover; 
 }
