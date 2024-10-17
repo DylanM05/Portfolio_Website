@@ -13,5 +13,24 @@
   "license": "ISC",
   "dependencies": {
     "react-router-dom": "^6.22.3"
+  },
+  "styles": {
+    ".Card-images": {
+      "display": "flex",
+      "justify-content": "center",
+      "width": "100%",
+      "padding-top": "75%",
+      "position": "relative"
+    },
+    ".Card-images .Card-Img, .carousel-container img": {
+      "position": "absolute",
+      "top": "0",
+      "left": "0",
+      "width": "100%",
+      "height": "100%",
+      "object-fit": "cover",
+      "border": "var(--shadow-color) 2px solid",
+      "border-radius": "15px"
+    }
   }
 }

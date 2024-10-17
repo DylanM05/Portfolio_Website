@@ -44,6 +44,7 @@ export function ThemeProvider({ children }) {
       document.documentElement.style.setProperty('--Resume-button', '#4ecca3');
       document.documentElement.style.setProperty('--Resume-button-text', '#000');
       document.documentElement.style.setProperty('--shadow-color', '#fff');
+      document.documentElement.style.setProperty('--indicator-color', '#fff');
     } else {
       document.documentElement.style.setProperty('--accent-color', '#b83b5e');
       document.documentElement.style.setProperty('--primary-color', '#9359c5');
@@ -59,6 +60,7 @@ export function ThemeProvider({ children }) {
       document.documentElement.style.setProperty('--Resume-button', '#000');
       document.documentElement.style.setProperty('--Resume-button-text', '#fff');
       document.documentElement.style.setProperty('--shadow-color', '#333');
+      document.documentElement.style.setProperty('--indicator-color', 'lightgrey');
     
     }
   }, [theme]);

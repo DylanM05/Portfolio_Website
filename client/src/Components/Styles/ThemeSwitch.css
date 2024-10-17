@@ -14,12 +14,12 @@
   
   .theme-switch.light {
     color: #000;
-    background-color: #f4f4f4;
+    background-color: #00FFFF00;
   }
   
   .theme-switch.dark {
     color: #fff;
-    background-color: var(--primary-color);
+    background-color: #00FFFF00;
   }
 
   @media (max-width: 600px) {

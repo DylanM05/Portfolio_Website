@@ -6,4 +6,5 @@
     color: var(--Resume-text);
     text-align: center;
     z-index: 100;
+    overflow: hidden;
   }

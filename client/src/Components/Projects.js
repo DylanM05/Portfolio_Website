@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Card, Modal, Button, Carousel } from 'react-bootstrap';
-import { DiAndroid, } from "react-icons/di";
-import { SiPython, SiPreact, SiBootstrap, SiMongodb, SiPortainer } from "react-icons/si";
-import { FaNodeJs } from "react-icons/fa";
+import { DiAndroid } from "react-icons/di";
+import { SiPython, SiPreact, SiBootstrap, SiMongodb} from "react-icons/si";
+import { FaNodeJs, FaGithub } from "react-icons/fa";
 import { BiSolidFileCss } from "react-icons/bi";
 import { TbFileTypeXml, TbBrandKotlin } from "react-icons/tb";
 
-import { FaGithub } from "react-icons/fa";
 import './Styles/Projects.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -15,7 +13,6 @@ import Footer from './Footer';
 import Ethgas from '../Images/ethgas.png';
 import Maticgas from '../Images/maticgas.png';
 import androidapp1 from '../Images/androidapp1.png';
-import androidapp2 from '../Images/androidapp2.png';
 import portfolioapp1 from '../Images/portfolioapp1.png';
 import portfolioapp2 from '../Images/portfolioapp2.png';
 import ezdeals1 from '../Images/ezdeals1.png';
@@ -24,12 +21,6 @@ import portainer from '../Images/portainer.png';
 import webscrape from '../Images/webscrape.png';
 
 function Projects() {
-  const navigate = useNavigate();
-
-  const goToDiscWidget = () => {
-    navigate('/discbot');
-  };
-
   const [show, setShow] = useState(false);
   const [modalImages, setModalImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -50,14 +41,12 @@ function Projects() {
       images: [Maticgas, Ethgas],
       githubLink: 'https://github.com/DylanM05/Gas-bot',
       buttonText: 'GitHub',
-      buttonText: 'Try it out!',
-      onClick: goToDiscWidget
     },
     {
       title: 'Student - Teacher Management App',
       subtitle: <div>Language: <DiAndroid /> <TbBrandKotlin/>Kotlin <TbFileTypeXml/>XML</div> ,
       description: 'This is a simple Android app that allows a teacher to register, add and manage students, tests, scores that are stored in the local Database',
-      images: [androidapp1, androidapp2],
+      images: [androidapp1],
       githubLink: 'https://github.com/DylanM05/Android-Student-Teacher-Management-App',
       buttonText: 'GitHub'
     },
@@ -96,63 +85,68 @@ function Projects() {
   ];
 
   return (
-    <div>
+    <div className="App">
       <Header />
-      <h1 className='Title'>My Projects</h1>
-      <div className='card-container'>
-        <div className='parent-div'>
-          <div className='projects-grid'>
-            {projects.map((project, index) => (
-              <Card key={index} className="project">
+      <div className="content">
+        <h1 className='Title'>My Projects</h1>
+        <Carousel interval={null}>
+          {projects.map((project, index) => (
+            <Carousel.Item key={index} className="carousel-item">
+              <Card className="project">
                 <Card.Body>
                   <Card.Title className="card-title">{project.title}</Card.Title>
                   <Card.Subtitle className="card-subtitle">
                     {project.subtitle}
                   </Card.Subtitle>
                   <Card.Text className="card-text">{project.description}</Card.Text>
-      <div className='Card-images'>
-        {project.images.length === 1 ? (
-          <Card.Img className='Card-Img' src={project.images[0]} alt="Project" onClick={() => handleShow(project.images, 0)} />
-        ) : (
-          <div className="carousel-container">
-            <Carousel interval={null} className='carousel'>
-              {project.images.map((image, i) => (
-                <Carousel.Item key={i} onClick={() => handleShow(project.images, i)}>
-  <img className="d-block w-100" src={image} alt={`Slide ${i}`} />
-</Carousel.Item>
-              ))}
-            </Carousel>
-          </div>
-        )}
+                  <div className='Card-images'>
+                    {project.images.length === 1 ? (
+                      <Card.Img className='Card-Img' src={project.images[0]} alt="Project" onClick={() => handleShow(project.images, 0)} />
+                    ) : (
+                      <div className="carousel-container">
+                        <Carousel 
+                          indicators={true} 
+                          controls={false} 
+                          interval={10000} // Set the interval for cycling through photos
+                          className="image-carousel" 
+                          indicatorLabels={['']} // This prop is used to show indicators
+                        >
+                          {project.images.map((image, i) => (
+                            <Carousel.Item key={i} onClick={() => handleShow(project.images, i)}>
+                              <img className="d-block w-100" src={image} alt={`Slide ${i}`} />
+                            </Carousel.Item>
+                          ))}
+                        </Carousel>
+                      </div>
+                    )}
+                  </div>
+                  <Card.Text className="img-disc">Click the images to view them in full size</Card.Text>
+                  <div className='button-container'>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <button className='card-button' variant="outline-dark"><FaGithub /> GitHub</button>
+                    </a>
+                    {project.onClick && (
+                      <button className='card-button' variant="outline-dark" onClick={project.onClick}>{project.buttonText}</button>
+                    )}
+                    {project.websiteLink && (
+                      <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
+                        <button className='card-button' variant="outline-dark">{project.websiteButtonText}</button>
+                      </a>
+                    )}
+                  </div>
+                </Card.Body>
+              </Card>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </div>
-      <Card.Text className="img-disc">Click the images to view them in full size</Card.Text>
-      <div className='button-container'>
-        <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-          <button className='card-button' variant="outline-dark"><FaGithub /> GitHub</button>
-        </a>
-        {project.onClick && (
-          <button className='card-button' variant="outline-dark" onClick={project.onClick}>{project.buttonText}</button>
-        )}
-        {project.websiteLink && (
-          <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
-            <button className='card-button' variant="outline-dark">{project.websiteButtonText}</button>
-          </a>
-        )}
-      </div>
-    </Card.Body>
-  </Card>
-))}
-
-          </div>
-        </div>
-      </div>
+      <Footer />
       <Modal show={show} onHide={handleClose} dialogClassName="modal-dialog" contentClassName="modal-content">
         <Modal.Body style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', padding: 0, position: 'relative' }}>
           <img src={modalImages[currentImageIndex]} alt="Zoomed project" style={{ maxWidth: '90vw', maxHeight: '90vh' }} />
           <Button className="close-button" id='close-button' onClick={handleClose}>Close</Button>
         </Modal.Body>
       </Modal>
-      <Footer />
     </div>
   );
 }
