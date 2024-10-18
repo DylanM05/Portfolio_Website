@@ -1,60 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Styles/Contact.css';
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 
-
 function ContactPage() {
-  const [textMessage, setTextMessage] = useState('');
-  const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
   const [result, setResult] = useState("");
-  const [cooldownStart, setCooldownStart] = useState(null);
-
-
-  let remainingMinutes = 0;
-  let now = new Date();
-  let cooldownEnd = null;
-  
-  if (cooldownStart) {
-    cooldownEnd = new Date(cooldownStart.getTime() + 60 * 60 * 1000);
-    remainingMinutes = Math.round((cooldownEnd - now) / 1000 / 60);
-  }
-
-useEffect(() => {
-  const cooldownStart = new Date(localStorage.getItem('cooldownStart'));
-  setCooldownStart(cooldownStart);
-}, []);
-
-  const api = axios.create({
-    baseURL: 'https://dylanmcmullen.onrender.com',  
-  });
-
-  const clearTextFields = () => {
-    setName('');
-    setContact('');
-    setTextMessage('');
-  };
-
-
-  const handleTextSubmit = async (event) => {
-    event.preventDefault();
-    const now = new Date();
-    localStorage.setItem('cooldownStart', now);
-    setCooldownStart(now);
-    try {
-      const message = `Name: ${name}, Contact: ${contact}, Message: ${textMessage}`;
-      const response = await api.post('/contact/sendtext', { message });
-      console.log(response.data);
-      clearTextFields();
-    } catch (error) {
-      if (error.response && error.response.status === 429) {
-        alert("Too many requests, please wait an hour before trying again");
-      } else {
-        console.error(error);
-      }
-    }
-  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -79,74 +28,38 @@ useEffect(() => {
     }
   };
 
-
   return (
-    <div>
-    <Header isResumePage={true} />
-    
-    <div className="contact">
-    <h1 className="contact-name">Contact Me</h1>
-    
-    <div className="contact-form">
-      <div className="contact-section">
-        <h2 className="contact-heading">Send me a text!</h2>
-        <form onSubmit={handleTextSubmit}>
-  
-  <div className="contact-field">
-    <label className="contact-label">Name:</label>
-    <input type="text" className="contact-input" value={name} onChange={(e) => setName(e.target.value)} />
-  </div>
-  
-  <div className="contact-field">
-    <label className="contact-label">Contact Number or Email:</label>
-    <input type="text" className="contact-input" value={contact} onChange={(e) => setContact(e.target.value)} />
-  </div>
-  
-  <div className="contact-field">
-    <label className="contact-label">Message:</label>
-    <textarea className="contact-textarea" value={textMessage} onChange={(e) => setTextMessage(e.target.value)} />
-  </div>
-  
-<div className="button-container">
-  <button className="card-button" type="submit" disabled={cooldownStart && now < cooldownEnd}>Send Text</button>
-</div>
-{cooldownStart && now < cooldownEnd && <p>You must wait {remainingMinutes} minutes to send another text.</p>}
-</form>
+    <div style={{ backgroundColor: 'var(--Resume-background)' }}>
+      <Header isResumePage={true} />
+      <div className="container mt-5" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)', minHeight: '84.2vh', paddingBottom: '2rem', overflow: 'hidden' }}>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-10 col-lg-8 col-xl-6">
+            <div className="card p-4" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)', minHeight: '50vh', overflow: 'hidden' }}>
+              <h2 className="text-center mb-4" style={{ color: 'var(--Resume-headings)', fontSize: '50px' }}>Send me an email!</h2>
+              <form onSubmit={onSubmit}>
+                <div className="mb-3">
+                  <label className="form-label" style={{ fontSize: '30px' }}>Name:</label>
+                  <input type="text" className="form-control" name="name" required />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label" style={{ fontSize: '30px' }}>Contact Email:</label>
+                  <input type="email" className="form-control" name="email" required />
+                </div>
+                <input type="hidden" name="subject" value="Email from your Portfolio Website!" />
+                <input type="hidden" name="from_name" value="Portfolio Contact" />
+                <div className="mb-3">
+                  <label className="form-label" style={{ fontSize: '30px' }}>Message:</label>
+                  <textarea name="message" className="form-control" required></textarea>
+                </div>
+                <div className="text-center">
+                  <button className="btn" type="submit" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--secondary-color)' }}>Send Email</button>
+                </div>
+              </form>
+              <span className="mt-3 d-block text-center">{result}</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="contact-section">     
-        <h2 className="contact-heading">Send me an email!</h2>
-        <div>
-      <form onSubmit={onSubmit}>
-         
-          <div className="contact-field">
-      <label className="contact-label">Name:</label>
-        <input type="text" className="contact-input" name="name" required/>
-        </div>
-        
-        <div className="contact-field">
-        <label className="contact-label">Contact Email:</label>
-        <input type="email" className="contact-input" name="email" required/>
-        </div>
-        
-        <input type="hidden" name="subject" value="Email from your Portfolio Website!"></input>
-        <input type="hidden" name="from_name" value="Portfolio Contact"></input>
-        
-        <div className="contact-field">
-        <label className="contact-label">Message:</label>
-        <textarea name="message" className="contact-textarea" required></textarea>
-        </div>
-
-        <div class="button-container">
-        <button className="card-button"  type="submit">Send Email</button>
-        </div>
-
-      </form>
-      </div>
-      <span>{result}</span>
-
-    </div>
-    </div>
-    </div>
     </div>
   );
 }
