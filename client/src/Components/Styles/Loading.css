@@ -1,46 +1,12 @@
-.spinner-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    text-align: center;
-    padding: 20px;
+@keyframes spinner-sequence {
+  0%, 100% {
+    opacity: 0.2;
   }
-  
-  .spinner-page h1, .spinner-page h2 {
-    color: var(--Resume-text); 
-    margin-bottom: var(--margin-small);
+  50% {
+    opacity: 1;
   }
-  
-  .spinner {
-    margin: 100px auto;
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    font-size: 10px;
-  }
-  
-  .spinner > div {
-    background-color: var(--Resume-text); 
-    height: 100%;
-    width: 6px;
-    display: inline-block;
-    animation: sk-stretchdelay 1.2s infinite ease-in-out;
-  }
-  
-  .spinner .rect2 {
-    animation-delay: -1.1s;
-  }
-  
-  .spinner .rect3 {
-    animation-delay: -1.0s;
-  }
-  
-  .spinner .rect4 {
-    animation-delay: -0.9s;
-  }
-  
-  .spinner .rect5 {
-    animation-delay: -0.8s;
-  }
+}
+
+.spinner-sequence {
+  animation: spinner-sequence 1s infinite;
+}

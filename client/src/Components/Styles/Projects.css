@@ -39,3 +39,6 @@
   height: 500px; 
   object-fit: cover; 
 }
+.carousel-indicators{
+  bottom:93% !important;
+}

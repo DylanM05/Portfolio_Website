@@ -1,9 +1,9 @@
 .theme-switch {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     left: 1rem;
     border: none;
-    background-color: #f4f4f4;
+    background-color: #f4f4f400;
     padding: 0.5rem;
     border-radius: 50%;
     cursor: pointer;
@@ -14,12 +14,12 @@
   
   .theme-switch.light {
     color: #000;
-    background-color: #f4f4f4;
+    background-color: #f4f40000;
   }
   
   .theme-switch.dark {
     color: #fff;
-    background-color: var(--primary-color);
+    background-color: #00000000;
   }
 
   @media (max-width: 600px) {

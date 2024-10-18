@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
+import Footer from './Footer';
 
 function ContactPage() {
   const [result, setResult] = useState("");
@@ -60,6 +61,7 @@ function ContactPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

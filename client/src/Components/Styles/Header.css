@@ -1,68 +1,9 @@
-.header, .header-resume {
-    color: var(--text-color);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: var(--shadow-color) 2px solid; 
-    z-index: 2;
-  }
-  
-  .header {
-    background-color: var(--primary-color);
-  }
-  
-  .header-resume {
-    background-color: var(--Resume-background);
-  }
-  
-  .header h1, .header-resume h1 {
-    justify-content: flex-start;
-    margin-left: 70px;
-    font-weight: bold;
-  }
-  
-  
-  .header nav, .header-resume nav {
-    justify-content: flex-end;
-    display: flex;
-    gap: 20px;
-    font-weight: bold;
-  }
-  
-  .header nav a, .header-resume nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 1.6rem;
-  }
-  
-  .header nav a:hover, .header-resume nav a:hover {
-    color: var(--accent-color);
-    font-style: oblique;
-  }
+.nav-link-custom {
+  color: var(--Resume-text);
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
 
-
-  @media only screen and (max-width: 900px) {
-    .header, .header-resume {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .header h1, .header-resume h1 {
-      margin-left: 0;
-      text-align: center;
-      width: 100%;
-    }
-  
-    .header nav, .header-resume nav {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-  
-    .header nav a, .header-resume nav a {
-      font-size: 1.2rem;
-    }
-  }
+.nav-link-custom:hover {
+  color: var(--accent-color);
+}

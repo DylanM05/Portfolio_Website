@@ -7,6 +7,7 @@ import BusinessCard from './Components/BusinessCard';
 import Projects from './Components/Projects';
 import Resume from "./Components/Resume";
 import ContactPage from "./Components/Contact";
+import Loading from "./Components/Loading";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/loading" element={<Loading />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -1,10 +1,10 @@
 import React from 'react';
-import './Styles/Footer.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Footer() {
   return (
-    <footer className='app-footer'>
-      <p>© 2024 Dylan McMullen. All rights reserved.</p>
+    <footer className="text-center py-2" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)' }}>
+      <p className="mb-0">© 2024 Dylan McMullen. All rights reserved.</p>
     </footer>
   );
 }

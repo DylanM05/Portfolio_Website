@@ -9,7 +9,8 @@ import { TbFileTypeXml, TbBrandKotlin } from "react-icons/tb";
 import Header from './Header';
 import Footer from './Footer';
 
-import './Styles/Projects.css';
+import './Styles/Projects.css'; // Ensure this import is present
+
 import Ethgas from '../Images/ethgas.png';
 import Maticgas from '../Images/maticgas.png';
 import androidapp1 from '../Images/androidapp1.png';
@@ -31,24 +32,6 @@ const Projects = () => {
     setCurrentImageIndex(index);
     setShow(true);
   };
-
-  useEffect(() => {
-    const controls = document.querySelectorAll('.carousel-control-prev, .carousel-control-next');
-
-    const handleBlur = (event) => {
-      event.target.blur();
-    };
-
-    controls.forEach(control => {
-      control.addEventListener('click', handleBlur);
-    });
-
-    return () => {
-      controls.forEach(control => {
-        control.removeEventListener('click', handleBlur);
-      });
-    };
-  }, []);
 
   const projects = [
     {
@@ -107,52 +90,50 @@ const Projects = () => {
       <Header />
       <Container className="content">
         <h1 className='text-center display-4 my-4' style={{color: 'var(--Resume-text)' }}>My Projects</h1>
-        <Carousel interval={null}>
+        <Carousel className="project-carousel" interval={null}>
           {projects.map((project, index) => (
             <Carousel.Item key={index} className="carousel-item">
-<Card className="project" style={{ color: 'var(--Resume-text)', boxShadow: `0 4px 20px var(--shadow-color)`, border: 'none', height: '1500px' }}>
-  <Card.Body>
-    <Card.Title className="card-title">{project.title}</Card.Title>
-    <Card.Subtitle className="card-subtitle mb-2" style={{ color: 'var(--Resume-text)' }}>
-      {project.subtitle}
-    </Card.Subtitle>
-    <Card.Text className="card-text" style={{ color: 'var(--Resume-text)' }}>{project.description}</Card.Text>
-    <div className='d-flex justify-content-center my-3'>
-      {project.images.length === 1 ? (
-        <Card.Img className='img-fluid' src={project.images[0]} alt="Project" onClick={() => handleShow(project.images, 0)} style={{ objectFit: 'cover'}} />
-      ) : (
-        <div className="w-100">
-          <Carousel 
-            indicators={true} 
-            controls={false} 
-            interval={7000} 
-            className="image-carousel" 
-            style={{ backgroundColor: 'var(--indicator-color)' }}
-          >
-            {project.images.map((image, i) => (
-              <Carousel.Item key={i} onClick={() => handleShow(project.images, i)}>
-                <img className="d-block w-100 image-carousel" src={image} alt={`Slide ${i}`} />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </div>
-      )}
-    </div>
-    <Card.Text className="text-center" style={{ color: 'var(--Resume-text)' }}>Click the images to view them in full size</Card.Text>
-    <div className='d-flex justify-content-center gap-2'>
-      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-        <Button variant="outline-dark" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--Resume-button-text)' }}><FaGithub /> GitHub</Button>
-      </a>
-      {project.websiteLink && (
-        <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
-          <Button variant="outline-dark" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--Resume-button-text)' }}>{project.websiteButtonText}</Button>
-        </a>
-      )}
-    </div>
-  </Card.Body>
-</Card>
-
-
+              <Card className="project" style={{ color: 'var(--Resume-text)', boxShadow: `0 4px 20px var(--shadow-color)`, border: 'none', height: '105vh' }}>
+                <Card.Body>
+                  <Card.Title className="card-title">{project.title}</Card.Title>
+                  <Card.Subtitle className="card-subtitle mb-2" style={{ color: 'var(--Resume-text)' }}>
+                    {project.subtitle}
+                  </Card.Subtitle>
+                  <Card.Text className="card-text" style={{ color: 'var(--Resume-text)' }}>{project.description}</Card.Text>
+                  <div className='d-flex justify-content-center my-3'>
+                    {project.images.length === 1 ? (
+                      <Card.Img className='img-fluid' src={project.images[0]} alt="Project" onClick={() => handleShow(project.images, 0)} style={{ objectFit: 'cover', maxHeight: '50vh'}} />
+                    ) : (
+                      <div className="w-100">
+                        <Carousel 
+                          indicators={true} 
+                          controls={false} 
+                          interval={7000} 
+                          className="image-carousel" 
+                          style={{ backgroundColor: 'var(--indicator-color)' }}
+                        >
+                          {project.images.map((image, i) => (
+                            <Carousel.Item key={i} onClick={() => handleShow(project.images, i)}>
+                              <img className="d-block w-100 image-carousel" src={image} alt={`Slide ${i}`} />
+                            </Carousel.Item>
+                          ))}
+                        </Carousel>
+                      </div>
+                    )}
+                  </div>
+                  <Card.Text className="text-center" style={{ color: 'var(--Resume-text)' }}>Click the images to view them in full size</Card.Text>
+                  <div className='d-flex justify-content-center gap-2'>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline-dark" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--Resume-button-text)' }}><FaGithub /> GitHub</Button>
+                    </a>
+                    {project.websiteLink && (
+                      <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline-dark" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--Resume-button-text)' }}>{project.websiteButtonText}</Button>
+                      </a>
+                    )}
+                  </div>
+                </Card.Body>
+              </Card>
             </Carousel.Item>
           ))}
         </Carousel>
@@ -161,7 +142,7 @@ const Projects = () => {
       <Modal show={show} onHide={handleClose} dialogClassName="modal-dialog" contentClassName="bg-transparent border-0">
         <Modal.Body className="d-flex justify-content-center align-items-center" style={{ height: '100vh', padding: 0, position: 'relative' }}>
           <img src={modalImages[currentImageIndex]} alt="Zoomed project" className="img-fluid" style={{ maxWidth: '90vw', maxHeight: '90vh' }} />
-          <button type="button" className="btn btn-danger" style={{ position: 'absolute', top: '10px', right: '-25vw' }} aria-label="Close" onClick={handleClose}>
+          <button type="button" className="btn btn-danger" style={{ position: 'absolute', top: '10px', right: '10px' }} aria-label="Close" onClick={handleClose}>
             Close
           </button>
         </Modal.Body>
