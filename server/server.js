@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const rateLimit = require("express-rate-limit");
 const populateRoutes = require('./Routes/populateRoute');
 const PORT = process.env.PORT || 3001;
-const allowedOrigins =  ['*']       //['http://localhost:3000', 'https://dylanmcmullen.vercel.app', '98.124.27.85'];
+const allowedOrigins =  ['http://localhost:3000', 'https://dylanmcmullen.vercel.app', '140.228.24.190'];
 const contactRoutes = require('./Routes/contactRoute');
 
 const apiLimiter = rateLimit({
