@@ -14,7 +14,7 @@
 
 /* Moves the Skills card closer to the business card */
 .skills-container {
-  margin-top: -23% !important; /* Reduce margin to move the skills card even closer */
+  margin-top: 5% !important; /* Reduce margin to move the skills card even closer */
 }
 
 /* Ensures the list items are properly styled */
