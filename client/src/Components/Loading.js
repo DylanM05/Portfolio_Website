@@ -9,7 +9,7 @@ const Loading = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`resume container-fluid`} style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)' }}> 
+    <div className={`resume container-fluid`} style={{ backgroundColor: 'var(--background)', color: 'var(--text)' }}> 
       <Header />
       <div className="d-flex flex-column justify-content-center align-items-center min-vh-100 text-center p-3" style={{ marginTop: '-13vh' }}>
         <h1>Loading...</h1>

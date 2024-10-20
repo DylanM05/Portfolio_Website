@@ -1,6 +1,6 @@
 .theme-switch {
     position: fixed;
-    top: 1rem;
+    top: 0.3rem;
     left: 1rem;
     border: none;
     background-color: #f4f4f400;
@@ -11,16 +11,7 @@
     transition: background-color 0.3s ease;
     z-index: 1000;
   }
-  
-  .theme-switch.light {
-    color: #000;
-    background-color: #f4f40000;
-  }
-  
-  .theme-switch.dark {
-    color: #fff;
-    background-color: #00000000;
-  }
+
 
   @media (max-width: 600px) {
     .theme-switch {

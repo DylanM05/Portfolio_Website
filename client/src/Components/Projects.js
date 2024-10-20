@@ -9,7 +9,10 @@ import { TbFileTypeXml, TbBrandKotlin } from "react-icons/tb";
 import Header from './Header';
 import Footer from './Footer';
 
+
 import './Styles/Projects.css'; // Ensure this import is present
+import '../App.css'; // Ensure this import is present
+
 
 import Ethgas from '../Images/ethgas.png';
 import Maticgas from '../Images/maticgas.png';
@@ -85,50 +88,51 @@ const Projects = () => {
     }
   ];
 
+ 
   return (
-    <div className="App" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)' }}>
+    <div className="app">
       <Header />
-      <Container className="content">
-        <h1 className='text-center display-4 my-4' style={{color: 'var(--Resume-text)' }}>My Projects</h1>
+      <Container style={styles.contentContainer}>
+        <h1 className='text-center display-4 my-4' style={styles.headerTitle}>My Projects</h1>
         <Carousel className="project-carousel" interval={null}>
           {projects.map((project, index) => (
-            <Carousel.Item key={index} className="carousel-item">
-              <Card className="project" style={{ color: 'var(--Resume-text)', boxShadow: `0 4px 20px var(--shadow-color)`, border: 'none', height: '105vh' }}>
+            <Carousel.Item key={index} className="carousel-item" class='card'>
+              <Card>
                 <Card.Body>
                   <Card.Title className="card-title">{project.title}</Card.Title>
-                  <Card.Subtitle className="card-subtitle mb-2" style={{ color: 'var(--Resume-text)' }}>
+                  <Card.Subtitle className="card-subtitle mb-2">
                     {project.subtitle}
                   </Card.Subtitle>
-                  <Card.Text className="card-text" style={{ color: 'var(--Resume-text)' }}>{project.description}</Card.Text>
+                  <Card.Text className="card-text">{project.description}</Card.Text>
                   <div className='d-flex justify-content-center my-3'>
                     {project.images.length === 1 ? (
-                      <Card.Img className='img-fluid' src={project.images[0]} alt="Project" onClick={() => handleShow(project.images, 0)} style={{ objectFit: 'cover', maxHeight: '50vh'}} />
+                      <Card.Img className='img-fluid' src={project.images[0]} alt="Project" onClick={() => handleShow(project.images, 0)} style={styles.image} />
                     ) : (
                       <div className="w-100">
                         <Carousel 
                           indicators={true} 
                           controls={false} 
                           interval={7000} 
-                          className="image-carousel" 
-                          style={{ backgroundColor: 'var(--indicator-color)' }}
+                          className="image-carousel"
+                          style={styles.imageCarousel}
                         >
                           {project.images.map((image, i) => (
                             <Carousel.Item key={i} onClick={() => handleShow(project.images, i)}>
-                              <img className="d-block w-100 image-carousel" src={image} alt={`Slide ${i}`} />
+                              <img className="d-block w-100" src={image} alt={`Slide ${i}`} />
                             </Carousel.Item>
                           ))}
                         </Carousel>
                       </div>
                     )}
                   </div>
-                  <Card.Text className="text-center" style={{ color: 'var(--Resume-text)' }}>Click the images to view them in full size</Card.Text>
+                  <Card.Text className="text-center">Click the images to view them in full size</Card.Text>
                   <div className='d-flex justify-content-center gap-2'>
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline-dark" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--Resume-button-text)' }}><FaGithub /> GitHub</Button>
+                      <Button className="button" variant="outline-dark"><FaGithub /> GitHub</Button>
                     </a>
                     {project.websiteLink && (
                       <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline-dark" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--Resume-button-text)' }}>{project.websiteButtonText}</Button>
+                        <Button className="button" variant="outline-dark" >{project.websiteButtonText}</Button>
                       </a>
                     )}
                   </div>
@@ -140,15 +144,47 @@ const Projects = () => {
       </Container>
       <Footer />
       <Modal show={show} onHide={handleClose} dialogClassName="modal-dialog" contentClassName="bg-transparent border-0">
-        <Modal.Body className="d-flex justify-content-center align-items-center" style={{ height: '100vh', padding: 0, position: 'relative' }}>
-          <img src={modalImages[currentImageIndex]} alt="Zoomed project" className="img-fluid" style={{ maxWidth: '90vw', maxHeight: '90vh' }} />
-          <button type="button" className="btn btn-danger" style={{ position: 'absolute', top: '10px', right: '10px' }} aria-label="Close" onClick={handleClose}>
+        <Modal.Body className="d-flex justify-content-center align-items-center" style={styles.modalBody}>
+          <img src={modalImages[currentImageIndex]} alt="Zoomed project" className="img-fluid" style={styles.modalImage} />
+          <button type="button" className="btn btn-danger" style={styles.closeButton} aria-label="Close" onClick={handleClose}>
             Close
           </button>
         </Modal.Body>
       </Modal>
     </div>
   );
-}
+};
+
+const styles = {
+
+  contentContainer: {
+    margin: '0 auto',
+    maxWidth: '70%',
+  },
+  headerTitle: {
+    color: 'var(--text)',
+  },
+  image: {
+    objectFit: 'cover',
+    maxHeight: '50vh',
+  },
+  imageCarousel: {
+    backgroundColor: 'var(--indicator-color)',
+  },
+  modalBody: {
+    height: '100vh',
+    padding: 0,
+    position: 'relative',
+  },
+  modalImage: {
+    maxWidth: '90vw',
+    maxHeight: '90vh',
+  },
+  closeButton: {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+  },
+};
 
 export default Projects;

@@ -1,9 +1,9 @@
 .nav-link-custom {
-  color: var(--Resume-text);
+  color: var(--text);
   font-size: 1.6rem;
   transition: color 0.3s ease;
 }
 
 .nav-link-custom:hover {
-  color: var(--accent-color);
+  color: var(--button);
 }

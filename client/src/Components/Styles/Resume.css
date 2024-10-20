@@ -11,8 +11,8 @@
 
 .resume {
   font-family: 'Roboto', sans-serif;
-  color: var(--Resume-text);
-  background-color: var(--Resume-background);
+  color: var(--text);
+  background-color: var(--background);
   height: 100%;
   width: 100%;
 }
@@ -20,12 +20,12 @@
 .resume-name, .headings-resume {
   font-size: var(--font-size-xlarge);
   margin: 0 var(--margin-small) var(--margin-small) 0;
-  color: var(--Resume-name);
+  color: var(--title-colour);
 }
 
 .resume-button {
-  background-color: var(--Resume-button);
-  color: var(--Resume-button-text);
+  background-color: var(--accent-colour);
+  color: var(--button-text);
   margin-top: var(--margin-large);
 }
 
@@ -42,16 +42,16 @@
 .headings-resume, .experience {
   text-decoration: underline;
   text-underline-offset: 4px;
-  color: var(--Resume-headings); 
+  color: var(--title-colour); 
 }
 
 .col-md-4.vline.tline {
-  border-left: var(--border-width) solid var(--Resume-line);
+  border-left: var(--border-width) solid var(--accent-colour);
   padding-left: var(--margin-small);
 }
 
 .col-md-8.tline, .col-md-12 {
-  border-top: var(--border-width) solid var(--Resume-line);
+  border-top: var(--border-width) solid var(--accent-colour);
   padding-top: var(--margin-small);
 }
 
@@ -71,11 +71,11 @@
 }
 
 .vline {
-  border-right: var(--border-width-small) solid var(--Resume-line); 
+  border-right: var(--border-width-small) solid var(--accent-colour); 
 }
 
 .tline {
-  border-top: var(--border-width-small) solid var(--Resume-line);
+  border-top: var(--border-width-small) solid var(--accent-colour);
 }
 
 .job-responsibility {

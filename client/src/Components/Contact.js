@@ -30,13 +30,13 @@ function ContactPage() {
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--Resume-background)' }}>
+    <div style={{ backgroundColor: 'var(--background)' }}>
       <Header isResumePage={true} />
-      <div className="container mt-5" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)', minHeight: '84.2vh', paddingBottom: '2rem', overflow: 'hidden' }}>
+      <div className="container mt-5" style={{ backgroundColor: 'var(--background)', color: 'var(--text)', minHeight: '84.2vh', paddingBottom: '2rem', overflow: 'hidden' }}>
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8 col-xl-6">
-            <div className="card p-4" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--Resume-text)', minHeight: '50vh', overflow: 'hidden' }}>
-              <h2 className="text-center mb-4" style={{ color: 'var(--Resume-headings)', fontSize: '50px' }}>Send me an email!</h2>
+            <div className="card p-4" style={{ backgroundColor: 'var(--background)', color: 'var(--text)', minHeight: '50vh', overflow: 'hidden' }}>
+              <h2 className="text-center mb-4" style={{ color: 'var(--title-colour)', fontSize: '50px' }}>Send me an email!</h2>
               <form onSubmit={onSubmit}>
                 <div className="mb-3">
                   <label className="form-label" style={{ fontSize: '30px' }}>Name:</label>
@@ -53,7 +53,7 @@ function ContactPage() {
                   <textarea name="message" className="form-control" required></textarea>
                 </div>
                 <div className="text-center">
-                  <button className="btn" type="submit" style={{ backgroundColor: 'var(--Resume-button)', color: 'var(--secondary-color)' }}>Send Email</button>
+                  <button className="btn" type="submit" class='button'>Send Email</button>
                 </div>
               </form>
               <span className="mt-3 d-block text-center">{result}</span>

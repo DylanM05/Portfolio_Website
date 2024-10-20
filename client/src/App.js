@@ -8,6 +8,7 @@ import Projects from './Components/Projects';
 import Resume from "./Components/Resume";
 import ContactPage from "./Components/Contact";
 import Loading from "./Components/Loading";
+import Header from "./Components/Header";
 
 function App() {
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Styles/Header.css'; // Ensure this import is present
+import './Styles/Header.css';
 
 function Header() {
   return (
-    <header className="container-fluid p-3 border-bottom" style={{ backgroundColor: 'var(--Resume-background)', color: 'var(--text-color)', borderBottom: '2px solid var(--shadow-color)', zIndex: 2 }}>
+    <header className="container-fluid p-3 border-bottom" style={{ backgroundColor: 'var(--background)', color: 'var(--text)', borderBottom: '2px solid var(--shadow-color)', zIndex: 2 }}>
       <div className="row align-items-center">
         <div className="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
         <h1 className="fw-bold" style={{ marginLeft: '5rem' }}>Dylan McMullen</h1>

@@ -4,7 +4,7 @@
     border: 1px solid var(--indicator-color) !important;
 }
 .carousel-dark .carousel-indicators [data-bs-target], .carousel-indicators [data-bs-target] {
-    background-color: var(--Resume-text) !important;
+    background-color: var(--text) !important;
   }
 
   .carousel-indicators [data-bs-target] {
@@ -21,7 +21,7 @@
 .carousel-control-prev,
 .carousel-control-next {
     color: var(--indicator-color) !important;
-    background-color: var(--Resume-button) !important;
+    background-color: var(--button) !important;
     opacity: 0 !important; 
     transition: opacity 0.5s ease !important;
     width: 5% !important;
@@ -41,4 +41,20 @@
 }
 .carousel-indicators{
   bottom:93% !important;
+}
+.button {
+  background-color: var(--button);
+  color: var(--button-text);
+  border: none;
+  padding: 1rem 1.5rem; 
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.3s ease;
+  align-self: center; 
+}
+.button:hover {
+  background-color: var(--button-hover) !important;
+  color: var(--button-hover-text) !important;
 }

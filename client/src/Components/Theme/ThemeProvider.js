@@ -30,36 +30,50 @@ export function ThemeProvider({ children }) {
 
   useEffect(() => {
     if (theme === 'dark') {
-      document.documentElement.style.setProperty('--accent-color', '#4ecca3');
-      document.documentElement.style.setProperty('--primary-color', '#333');
-      document.documentElement.style.setProperty('--secondary-color', '#2c2c2c');
-      document.documentElement.style.setProperty('--Orange', '#b83b5e');
-      document.documentElement.style.setProperty('--text-color', '#ffffff');
-      document.documentElement.style.setProperty('--Resume-background', '#333');
-      document.documentElement.style.setProperty('--Resume-name', '#4ecca3');
-      document.documentElement.style.setProperty('--Resume-headings', '#4ecca3');
-      document.documentElement.style.setProperty('--Resume-text', '#ffffff');
-      document.documentElement.style.setProperty('--Resume-bullet-points', '#4ecca3');
-      document.documentElement.style.setProperty('--Resume-line', '#4ecca3');
-      document.documentElement.style.setProperty('--Resume-button', '#4ecca3');
-      document.documentElement.style.setProperty('--Resume-button-text', '#000');
+
+            //************ DARK MODE   ******************//
+      //background
+      document.documentElement.style.setProperty('--background', '#333');
+      //shadow
       document.documentElement.style.setProperty('--shadow-color', '#fff');
+      //text
+      document.documentElement.style.setProperty('--text', '#ffffff');
+      //Buttons
+      document.documentElement.style.setProperty('--button', '#4ecca3');
+      document.documentElement.style.setProperty('--button-text', '#000');
+      document.documentElement.style.setProperty('--button-hover', '#000'); 
+      document.documentElement.style.setProperty('--button-hover-text', '#fff');
+      //tags on home page
+      document.documentElement.style.setProperty('--tag-color', '#2c2c2c');
+
+      //Resume
+      document.documentElement.style.setProperty('--title-colour', '#4ecca3');
+      document.documentElement.style.setProperty('--accent-colour', '#4ecca3');
+      
+      //Carousel
       document.documentElement.style.setProperty('--indicator-color', '#4ecca3');
+
     } else {
-      document.documentElement.style.setProperty('--accent-color', '#b83b5e');
-      document.documentElement.style.setProperty('--primary-color', '#9359c5');
-      document.documentElement.style.setProperty('--secondary-color', '#f8f9fa');
-      document.documentElement.style.setProperty('--Orange', '#4ecca3');
-      document.documentElement.style.setProperty('--text-color', '#000000');
-      document.documentElement.style.setProperty('--Resume-background', '#ffffff');
-      document.documentElement.style.setProperty('--Resume-name', '#1a237e');
-      document.documentElement.style.setProperty('--Resume-headings', '#1a237e');
-      document.documentElement.style.setProperty('--Resume-text', '#333');
-      document.documentElement.style.setProperty('--Resume-bullet-points', '#000');
-      document.documentElement.style.setProperty('--Resume-line', '#000');
-      document.documentElement.style.setProperty('--Resume-button', '#000');
-      document.documentElement.style.setProperty('--Resume-button-text', '#fff');
+      //************ LIGHT MODE   ******************//
+      //background
+      document.documentElement.style.setProperty('--background', '#ffffff');
+      //shadow
       document.documentElement.style.setProperty('--shadow-color', '#333');
+      //text
+      document.documentElement.style.setProperty('--text', '#333');
+      //Buttons
+      document.documentElement.style.setProperty('--button', '#b83b5e');
+      document.documentElement.style.setProperty('--button-text', '#fff');
+      document.documentElement.style.setProperty('--button-hover', '#000'); 
+      document.documentElement.style.setProperty('--button-hover-text', '#fff');
+      //tags on home page
+      document.documentElement.style.setProperty('--tag-color', '#d9dadb');
+
+      //Resume
+      document.documentElement.style.setProperty('--title-colour', '#b83b5e');
+      document.documentElement.style.setProperty('--accent-colour', '#000');
+
+      //Carousel
       document.documentElement.style.setProperty('--indicator-color', '#fff');
     }
   }, [theme]);

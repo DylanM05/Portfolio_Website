@@ -52,7 +52,7 @@ if (isLoading) {
         <div className="row">
           <div className="col-md-2 align-right">
             <a href="https://drive.google.com/file/d/1xkhuTyuvHGfYtsE5oCAdCVycznCMsfbn/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              <div className="btn btn-dark resume-button">View PDF</div>
+              <div className="btn" class='button' style={{textAlign: 'center'}}>View PDF</div>
             </a>
           </div>
           <div className="col-md-10">
