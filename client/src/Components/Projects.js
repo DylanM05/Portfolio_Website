@@ -23,11 +23,15 @@ import ezdeals1 from '../Images/ezdeals1.png';
 import ezdeals2 from '../Images/ezdeals2.png';
 import portainer from '../Images/portainer.png';
 import webscrape from '../Images/webscrape.png';
+import waterways1 from '../Images/waterways1.png';
+import waterways2 from '../Images/waterways2.png';
+import waterways3 from '../Images/waterways3.png';
 
 const Projects = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [show, setShow] = useState(false);
   const [modalImages, setModalImages] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClose = () => setShow(false);
   const handleShow = (images, index) => {
@@ -38,34 +42,19 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'ETH / MATIC gas Discord Bot',
-      subtitle: <div>Language: <SiPython /> Python </div>,
-      description: 'I made this in 2022, when Cryptocurrency was all the hype. This is a discord bot that retrieves the gas price of ETH and MATIC using Etherscan or polygonscan',
-      imagedisc:'Click the images to view them in full size',
-      images: [Maticgas, Ethgas],
-      githubLink: 'https://github.com/DylanM05/Gas-bot',
+      title: 'WaterWays App - Fishing Utility',
+      subtitle:<div>Language: <FaNodeJs /> Node.js/Express.js<br/> <SiBootstrap/>Bootstrap <SiMongodb/> MongoDB </div>,
+      description: 'WaterWays is a custom fishing analytics platform I developed that collects water and weather data via scheduled API calls every 6 hours. Built with Node.js and MongoDB, the application analyzes metrics like temperature, barometric pressure, and water levels to determine optimal fishing conditions. Self-hosted with continuous improvements.',
+      images: [waterways1, waterways2, waterways3],
+      githubLink: 'https://github.com/DylanM05/WaterWays',
       buttonText: 'GitHub',
-    },
-    {
-      title: 'Student - Teacher Management App',
-      subtitle: <div>Language: <DiAndroid /> <TbBrandKotlin/>Kotlin <TbFileTypeXml/>XML</div> ,
-      description: 'This is a simple Android app that allows a teacher to register, add and manage students, tests, scores that are stored in the local Database',
-      images: [androidapp1],
-      githubLink: 'https://github.com/DylanM05/Android-Student-Teacher-Management-App',
-      buttonText: 'GitHub'
-    },
-    {
-      title: 'Portfolio Website',
-      subtitle: <div>Language: <SiPreact />React.js <br/><FaNodeJs />Node.js/Express.js <br/><SiBootstrap />Bootstrap <SiMongodb />MongoDB <br/> <BiSolidFileCss/> CSS  </div>,
-      description: 'This is a portfolio website that I made using React.js & Bootstrap for the front end, and Node.js/express.js for the backend. I stored info in MongoDB and retrieve it for the resume page.',
-      images: [portfolioapp1, portfolioapp2],
-      githubLink: 'https://github.com/DylanM05/Portfolio_Website',
-      buttonText: 'GitHub'
+      websiteLink: 'https://waterways.dylansserver.top/',
+      websiteButtonText: 'Check it out!'
     },
     {
       title: 'EZDealsHub web store',
       subtitle:<div>Language: <FaNodeJs /> Node.js/Express.js<br/> <SiBootstrap/>Bootstrap <SiMongodb/> MongoDB </div>,
-      description: 'This is a web store that I made for my web app development class, in collaboration with 3 other people using Node.js & Bootstrap for the front end, and Node.js/express.js for the backend. If you check out the website, please keep in mind Render deletes our images!',
+      description: 'EZDealsHub is an e-commerce platform I built with three teammates using the MERN stack. Features include user authentication, product browsing with filters, shopping cart, and order processing. I implemented responsive Bootstrap UI and RESTful APIs with Node.js/Express. Currently deployed on Render\'s free tier.',
       images: [ezdeals1, ezdeals2],
       githubLink: 'https://github.com/DylanM05/EzDealsHub',
       buttonText: 'GitHub',
@@ -73,18 +62,43 @@ const Projects = () => {
       websiteButtonText: 'Check it out!'
     },
     {
+      title: 'Home Media & Cloud server',
+      subtitle: <div>Running: Ubuntu Server and running everything in Docker containers</div>,
+      description: 'I built a self-hosted media and cloud infrastructure using Ubuntu Server with Docker containers for Plex media streaming and Nextcloud file storage. Implemented automated weekly backups using shell scripts and cron jobs, demonstrating practical DevOps skills and systems administration expertise.',
+      images: [portainer],
+    },
+    {
+      title: 'ETH / MATIC gas Discord Bot',
+      subtitle: <div>Language: <SiPython /> Python </div>,
+      description: 'Python Discord bot that fetches and displays real-time Ethereum and Polygon (MATIC) gas prices using Etherscan and Polygonscan APIs. Helps users track blockchain transaction costs efficiently.',
+      imagedisc:'Click the images to view them in full size',
+      images: [Maticgas, Ethgas],
+      githubLink: 'https://github.com/DylanM05/Gas-bot',
+      buttonText: 'GitHub',
+    },
+    {
+      title: 'Portfolio Website',
+      subtitle: <div>Language: <SiPreact />React.js <br/><FaNodeJs />Node.js/Express.js <br/><SiBootstrap />Bootstrap <SiMongodb />MongoDB <br/> <BiSolidFileCss/> CSS  </div>,
+      description: 'Full-stack personal portfolio built with React.js and Bootstrap frontend, powered by a Node.js/Express backend. Features dynamic content management through MongoDB integration for resume data and responsive design for optimal viewing across devices.',
+      images: [portfolioapp1, portfolioapp2],
+      githubLink: 'https://github.com/DylanM05/Portfolio_Website',
+      buttonText: 'GitHub'
+    },
+    {
       title: 'Indeed Webscraper',
       subtitle: <div>Language: <SiPython /> Python </div>,
-      description: 'This is a webscraper that I made using Python. It scrapes the Indeed website for job postings with specified keywords and stores them in a CSV file.',
+      description: 'Python-based web scraping tool that automates job search by extracting Indeed.com postings based on customizable keywords. Implements data parsing techniques and outputs structured results to CSV format for analysis and application tracking.',
       images: [webscrape],
       githubLink: 'https://github.com/DylanM05/IndeedWebScraper',
       buttonText: 'GitHub'
     },
     {
-      title: 'Home Media & Cloud server',
-      subtitle: <div>Running: Ubuntu Server and seperating everything into Docker containers</div>,
-      description: 'This is a server that I made using Ubuntu Server. It runs a Plex server, Nextcloud server, and a few other services. I have everything separated into Docker containers for easy management. I have also created an automated backup script that runs every week, and replaces the old backup with the new one.',
-      images: [portainer],
+      title: 'Course & Marks Android App',
+      subtitle: <div>Language: <DiAndroid /> <TbBrandKotlin/>Kotlin <TbFileTypeXml/>XML</div> ,
+      description: 'Kotlin-based Android application for educational management featuring secure user authentication, student record organization, and assessment tracking. Implemented using SQLite for local data persistence with a clean, intuitive XML-designed interface.',
+      images: [androidapp1],
+      githubLink: 'https://github.com/DylanM05/Android-Student-Teacher-Management-App',
+      buttonText: 'GitHub'
     }
   ];
 
@@ -93,8 +107,38 @@ const Projects = () => {
     <div className="app">
       <Header />
       <Container style={styles.contentContainer}>
-        <h1 className='text-center display-4 my-4' style={styles.headerTitle}>My Projects</h1>
-        <Carousel className="project-carousel" interval={null}>
+        <div className="project-nav-container mb-4 py-2">
+          {/* For desktop/tablet - the current button navigation */}
+          <div className="project-nav d-none d-md-flex flex-wrap justify-content-center">
+            {projects.map((project, index) => (
+              <div 
+                key={index}
+                className={`project-nav-item p-2 m-1 ${index === activeIndex ? 'active' : ''}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                {project.title.split(' - ')[0]}
+              </div>
+            ))}
+          </div>
+          
+          {/* For mobile - dropdown navigation */}
+          <div className="d-md-none mx-auto text-center">
+            <select 
+              className="form-select project-dropdown"
+              value={activeIndex}
+              onChange={(e) => setActiveIndex(parseInt(e.target.value))}
+              aria-label="Project selection"
+            >
+              {projects.map((project, index) => (
+                <option key={index} value={index}>
+                  {project.title.split(' - ')[0]}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        
+        <Carousel className="project-carousel" indicators={false} interval={null} activeIndex={activeIndex} onSelect={setActiveIndex}>
           {projects.map((project, index) => (
             <Carousel.Item key={index} className="carousel-item" class='card'>
               <Card>

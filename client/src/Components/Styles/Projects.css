@@ -40,7 +40,7 @@
   object-fit: cover; 
 }
 .carousel-indicators{
-  bottom:93% !important;
+  bottom:-10% !important;
 }
 .button {
   background-color: var(--button);
@@ -57,4 +57,46 @@
 .button:hover {
   background-color: var(--button-hover) !important;
   color: var(--button-hover-text) !important;
+}
+
+.project-nav-container {
+  border-bottom: 1px solid var(--shadow-color);
+}
+
+.project-nav {
+  scrollbar-width: thin;
+}
+
+.project-nav-item {
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: 1px solid var(--border-color, #dee2e6);
+}
+
+.project-nav-item.active {
+  background-color: var(--button, #0d6efd);
+  color: var(--button-text, #fff);
+}
+
+.project-nav-item:hover {
+  background-color: var(--button-hover, #0b5ed7);
+  color: var(--button-text, #fff);
+}
+
+.project-dropdown {
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: var(--background, #fff);
+  color: var(--text, #333);
+  border: 1px solid var(--border-color, #dee2e6);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-dropdown:focus {
+  box-shadow: 0 0 0 0.2rem rgba(var(--button-rgb, 0, 123, 255), 0.25);
+  border-color: var(--button, #0d6efd);
 }

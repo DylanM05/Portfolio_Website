@@ -24,7 +24,7 @@ function BusinessCard() {
                 <Card.Title className="card-title">Dylan McMullen</Card.Title>
                 <Card.Subtitle className="mb-2 card-subtitle">Software Engineer</Card.Subtitle>
                 <Card.Text className="card-text">
-                  Welcome to my portfolio! <br /> Click the button below to view my Resume, Projects, GitHub, and LinkedIn.
+                  Welcome to my portfolio! <br /> Click the buttons below to view my Resume, Projects, GitHub, and LinkedIn.
                 </Card.Text>
                 <div className="d-flex flex-wrap justify-content-around card-button-container">
                   <Button className="button mb-2" onClick={() => navigate("/resume")}>
@@ -63,24 +63,28 @@ function BusinessCard() {
                           <li className="tag">Node.js</li>
                           <li className="tag">Express</li>
                           <li className="tag">SQL</li>
-                          <li className="tag">noSQL</li>
+                          <li className="tag">MongoDB</li>
+                          <li className="tag">GraphQL</li>
                         </ul>
                       </Col>
                       <Col xs={12} sm={6} md={4} className="mb-4">
                         <Card.Subtitle className="tag-category">Front End</Card.Subtitle>
                         <ul>
-                          <li className="tag">JavaScript</li>
                           <li className="tag">React</li>
                           <li className="tag">HTML</li>
                           <li className="tag">CSS</li>
                           <li className="tag">Bootstrap</li>
+                          <li className="tag">Microfrontends</li>
                         </ul>
                       </Col>
                       <Col xs={12} sm={6} md={4} className="mb-4">
-                        <Card.Subtitle className="tag-category">Version Control</Card.Subtitle>
+                        <Card.Subtitle className="tag-category">AI</Card.Subtitle>
                         <ul>
-                          <li className="tag">Git</li>
-                          <li className="tag">GitHub</li>
+                          <li className="tag">Python</li>
+                          <li className="tag">JavaScript</li>
+                          <li className="tag">OpenAI API Integration</li>
+                          <li className="tag">Google Gemini API Integration</li>
+                          <li className="tag">LangChain</li>
                         </ul>
                       </Col>
                       <Col xs={12} sm={6} md={4} className="mb-4">
@@ -89,12 +93,23 @@ function BusinessCard() {
                           <li className="tag">Java</li>
                           <li className="tag">Python</li>
                           <li className="tag">C#</li>
+                          <li className="tag">JavaScript</li>
                         </ul>
                       </Col>
                       <Col xs={12} sm={6} md={4} className="mb-4">
-                        <Card.Subtitle className="tag-category">Mobile</Card.Subtitle>
+                        <Card.Subtitle className="tag-category">Deployment</Card.Subtitle>
                         <ul>
-                          <li className="tag">Kotlin (Android)</li>
+                          <li className="tag">Docker</li>
+                          <li className="tag">Docker Compose</li>
+                          <li className="tag">NGINX Proxy</li>
+                          <li className="tag">Cloudflare Tunnels</li>
+                        </ul>
+                      </Col>
+                      <Col xs={12} sm={6} md={4} className="mb-4">
+                        <Card.Subtitle className="tag-category">Version Control</Card.Subtitle>
+                        <ul>
+                          <li className="tag">Git</li>
+                          <li className="tag">GitHub</li>
                         </ul>
                       </Col>
                     </Row>
