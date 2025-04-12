@@ -38,6 +38,9 @@ export function ThemeProvider({ children }) {
       document.documentElement.style.setProperty('--shadow-color', '#fff');
       //text
       document.documentElement.style.setProperty('--text', '#ffffff');
+      document.documentElement.style.setProperty('--input-background', '#333');
+      document.documentElement.style.setProperty('--input-text', '#fff');
+
       //Buttons
       document.documentElement.style.setProperty('--button', '#4ecca3');
       document.documentElement.style.setProperty('--button-text', '#000');
@@ -61,6 +64,8 @@ export function ThemeProvider({ children }) {
       document.documentElement.style.setProperty('--shadow-color', '#333');
       //text
       document.documentElement.style.setProperty('--text', '#333');
+      document.documentElement.style.setProperty('--input-background', '#fff');
+      document.documentElement.style.setProperty('--input-text', '#333');
       //Buttons
       document.documentElement.style.setProperty('--button', '#b83b5e');
       document.documentElement.style.setProperty('--button-text', '#fff');

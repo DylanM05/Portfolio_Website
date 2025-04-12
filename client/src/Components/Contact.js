@@ -40,17 +40,17 @@ function ContactPage() {
               <form onSubmit={onSubmit}>
                 <div className="mb-3">
                   <label className="form-label" style={{ fontSize: '30px' }}>Name:</label>
-                  <input type="text" className="form-control" name="name" required />
+                  <input type="text" className="form-control" name="name" style={{backgroundColor: 'var(--input-background)', color:'var(--input-text)'}} required />
                 </div>
                 <div className="mb-3">
                   <label className="form-label" style={{ fontSize: '30px' }}>Contact Email:</label>
-                  <input type="email" className="form-control" name="email" required />
+                  <input type="email" className="form-control" name="email" style={{backgroundColor: 'var(--input-background)', color:'var(--input-text)'}} required />
                 </div>
                 <input type="hidden" name="subject" value="Email from your Portfolio Website!" />
                 <input type="hidden" name="from_name" value="Portfolio Contact" />
                 <div className="mb-3">
                   <label className="form-label" style={{ fontSize: '30px' }}>Message:</label>
-                  <textarea name="message" className="form-control" required></textarea>
+                  <textarea name="message" className="form-control" style={{backgroundColor: 'var(--input-background)', color:'var(--input-text)'}} required></textarea>
                 </div>
                 <div className="text-center">
                   <button className="btn" type="submit" class='button'>Send Email</button>
